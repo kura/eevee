@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block body_class %}post-template{% endblock body_class %}
+{% block content %}
+    <article class="post">
+        <span class="post-meta">
+            <time datetime="{{ article.locale_date }}">{{ article.locale_date }}</time>
+            in <a href="/{{ article.category.url }}/">{{ article.category }}</a>
+            {% if article.tags %}
+                with tags:
+                {% for tag in article.tags %}
+                    <a href="/{{ tag.url}}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            {% endif %}
+        </span>
+        <h1 class="post-title">
+            <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+        </h1>
+        <span class="post-meta">
+            <a href="https://raw.github.com/kura/kura.io/master/content/{{ article.get_relative_source_path() }}">View on <span class="fa fa-github"></span></a>
+        </span>
+        <section class="post-content">
+            {% if article.toc %}{{ article.toc }}{% endif %}
+            {{ article.content }}
+        </section>
+        <footer class="post-footer">
+            {% include 'share.html' %}
+            {% include 'disqus.html' %}
+        <footer>
+    </article>
+{% endblock %}
