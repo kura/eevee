@@ -2,30 +2,27 @@
 {% block title %}{{ article.title }}{% endblock %}
 {% block body_class %}post-template{% endblock body_class %}
 {% block content %}
-    <article class="post">
-        <span class="post-meta">
-            <time datetime="{{ article.locale_date }}">{{ article.locale_date }}</time>
-            in <a href="/{{ article.category.url }}/">{{ article.category }}</a>
-            {% if article.tags %}
-                with tags:
-                {% for tag in article.tags %}
-                    <a href="/{{ tag.url}}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-                {% endfor %}
-            {% endif %}
-        </span>
-        <h1 class="post-title">
-            <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-        </h1>
-        <span class="post-meta">
-            <a href="https://raw.github.com/kura/kura.io/master/content/{{ article.get_relative_source_path() }}">View on <span class="fa fa-github"></span></a>
-        </span>
+    <article>
+        <div class="eevee-meta mdl-color-text--grey-500">
+          {{ article.locale_date }}
+        </div>
+        <h3>
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+                {{ article.title }}
+            </a>
+        </h3>
+        <section class="eevee-toc">
+            <h3>Contents</h3>
+            <nav class="eevee-toc-ribbon">
+                {% if article.toc %}{{ article.toc }}{% endif %}
+            </nav>
+        </section>
         <section class="post-content">
-            {% if article.toc %}{{ article.toc }}{% endif %}
             {{ article.content }}
         </section>
-        <footer class="post-footer">
+        <div class="post-footer">
             {% include 'share.html' %}
             {% include 'disqus.html' %}
-        <footer>
+        </div>
     </article>
 {% endblock %}

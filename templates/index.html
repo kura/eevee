@@ -1,20 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 {% for article in (articles_page.object_list if articles_page else articles) %}
-<div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title mdl-color-text--grey-50">
-    <h3 class="quote"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
-  </div>
-  <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-      {{ article.summary }}
-  </div>
-  <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-    <div class="minilogo"></div>
-    <div>
-      <span><time datetime="{{ article.locale_date }}">{{ article.locale_date }}</time</span>
-    </div>
-  </div>
-</div>
+    <article>
+        <div class="eevee-meta mdl-color-text--grey-500">
+          {{ article.locale_date }}
+        </div>
+        <h3>
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+                {{ article.title }}
+            </a>
+        </h3>
+        {{ article.summary }}
+    </article>
+    <hr />
 {% endfor %}
 {% include 'pagination.html' %}
 {% endblock content %}
