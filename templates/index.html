@@ -1,18 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 {% for article in (articles_page.object_list if articles_page else articles) %}
-    <article>
+    <article class="eevee-padding">
         <div class="eevee-meta mdl-color-text--grey-500">
-          {{ article.locale_date }}
+            {{ article.locale_date }}
         </div>
-        <h3>
-            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
-                {{ article.title }}
-            </a>
-        </h3>
+        <h2><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+               title="Permalink to {{ article.title|striptags }}">
+            {{ article.title }}
+        </a></h2>
         {{ article.summary }}
+        <div class="eevee-divider mdl-color--accent"></div>
     </article>
-    <hr />
 {% endfor %}
 {% include 'pagination.html' %}
 {% endblock content %}

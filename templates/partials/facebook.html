@@ -1,0 +1,44 @@
+{% if USE_OPEN_GRAPH is not defined %}
+    {% set USE_OPEN_GRAPH = False %}
+{% endif %}
+{% if OPEN_GRAPH_IMAGE is not defined %}
+    {% set OPEN_GRAPH_IMAGE = False %}
+{% endif %}
+{% if USE_OPEN_GRAPH %}
+    <meta property="og:site_name" content="{{ SITENAME }}" />
+    <meta property="og:type" content="article" />
+    {% if article %}
+        <meta property="og:title"
+              content="{{ article.title if article else page.title }}" />
+        <meta property="og:url"
+              content="{{ SITEURL }}/{{ article.url if article else page.url}}" />
+        <meta property="og:description"
+              content="{{ article.summary|striptags|escape }}" />
+        {% if article.og_image %}
+            <meta property="og:image"
+                  content="{{ SITEURL }}/{{ article.og_image }}" />
+        {% elif OPEN_GRAPH_IMAGE %}
+            <meta property="og:image"
+                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}" />
+        {% endif %}
+    {% elif page %}
+        <meta property="og:title"
+              content="{{ article.title if article else page.title }}" />
+        <meta property="og:url"
+              content="{{ SITEURL }}/{{ article.url if article else page.url}}" />
+        {% if page.og_image %}
+            <meta property="og:image"
+                  content="{{ SITEURL }}/{{ page.og_image }}" />
+        {% elif OPEN_GRAPH_IMAGE %}
+            <meta property="og:image"
+                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}" />
+        {% endif %}
+    {% else %}
+        <meta property="og:title" content="{{ SITENAME }}" />
+        <meta property="og:url" content="{{ SITEURL }}/{{ output_file }}" />
+        {% if OPEN_GRAPH_IMAGE %}
+            <meta property="og:image"
+                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}" />
+        {% endif %}
+    {% endif %}
+{% endif %}
