@@ -34,7 +34,7 @@
         <meta property="twitter:title"
               content="{{ page.title|striptags|escape }}" />
         <meta property="twitter:url"
-              content="{{ SITEURL }}/{{ article.url if article else page.url}}" />
+              content="{{ SITEURL }}/{{ page.url}}" />
         {% if page.og_image %}
             <meta property="twitter:image"
                   content="{{ SITEURL }}/{{ page.og_image }}" />
