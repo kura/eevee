@@ -38,6 +38,10 @@ Features
 Typography
 ==========
 
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/eevee-typography.png
+    :alt: Eevee Typography
+    :align: center
+
 Google's `Roboto <https://material.google.com/style/typography.html>`_ font is
 used for typography, `Material Icons <https://design.google.com/icons/>`_ and
 `Font Awesome <http://fontawesome.io/icons/>`_ are included too.
