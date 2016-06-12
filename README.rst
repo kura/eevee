@@ -101,9 +101,34 @@ Requirements
 Installation
 ============
 
-You can find Eevee `on GitHub <https://github.com/kura/eevee>`_ and you can
+You can find Eevee `on GitHub <https://github.com/kura/eevee>`__ and you can
 find installation instructions for themes in the `pelican documentation
 <http://docs.getpelican.com/en/latest/pelican-themes.html>`_.
+
+Configuring the primary and accent colours
+==========================================
+
+The primary and accent colours are configured using the ``THEME_PRIMARY`` and
+``THEME_ACCENT`` options respectively.
+
+You can find available primary and accent colours on `Material Design Lite
+<https://getmdl.io/customize/index.html>`_. This website also shows you accents
+that won't work well with the primary colour you choose.
+
+.. code-block:: python
+
+    THEME_PRIMARY = 'blue'
+
+.. code-block:: python
+
+    THEME_ACCENT = 'amber'
+
+The default colour scheme is **deep_purple** and **green**.
+
+.. code-block:: python
+
+    THEME_PRIMARY = 'deep_purple'
+    THEME_ACCENT = 'green'
 
 Header and footer options
 =========================
@@ -188,7 +213,7 @@ a ``toc`` option for RST content.
 
 The extract_toc plugin adds an ugly header element by default, I have a
 modified version `on GitHub
-<https://github.com/kura/kura.io/tree/master/plugins/extract_toc>`_ that
+<https://github.com/kura/kura.io/tree/master/plugins/extract_toc>`__ that
 returns nicer HTML.
 
 Using Disqus for comments
