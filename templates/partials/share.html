@@ -7,7 +7,7 @@
             {% set share_title = page.title %}
             {% set share_url = SITEURL ~ '/' ~ page.url %}
         {% endif %}
-        <a href="https://twitter.com/share?text={{ share_title|striptags }}"
+        <a href="https://twitter.com/intent/tweet?text={{ share_title|striptags|urlencode }}&amp;url={{ share_url|urlencode }}{% if TWITTER_USERNAME %}&amp;related={{ TWITTER_USERNAME }}{% endif %}"
            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;">
             <i class="fa fa-twitter mdl-color-text--primary"
                aria-hidden="true"></i>
@@ -20,7 +20,7 @@
        </a>
     </div>
     <div>
-        <a href="https://plus.google.com/share?url={{ share_url }}"
+        <a href="https://plus.google.com/share?url={{ share_url|urlencode }}"
            onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
             <i class="fa fa-google mdl-color-text--primary"
                aria-hidden="true"></i>
