@@ -1,6 +1,9 @@
 {% if THEME_PRIMARY is not defined or THEME_ACCENT is not defined %}
-    {% set THEME_PRIMARY = 'teal' %}
-    {% set THEME_ACCENT = 'pink' %}
+    {% set THEME_PRIMARY = 'deep_purple' %}
+    {% set THEME_ACCENT = 'green' %}
+{% endif %}
+{% if MEGA_FOOTER is not defined %}
+    {% set MEGA_FOOTER = True %}
 {% endif %}
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
@@ -41,7 +44,9 @@
                 </div>
             </div>
             <footer class="mdl-mega-footer">
-                {% include 'partials/mega_footer.html' %}
+                {% if MEGA_FOOTER == True %}
+                    {% include 'partials/mega_footer.html' %}
+                {% endif %}
                 <div class="mdl-mega-footer--bottom-section">
                     <div class="mdl-logo">
                         <a href="{{ SITEURL }}">{{ SITENAME }}</a>
@@ -49,7 +54,7 @@
                     <ul class="eevee-footer mdl-mega-footer--link-list">
                         <li>
                             Powered by love, rainbow sparkles &amp; the
-                            <a href="https://kura.io/eevee">eevee</a> theme.
+                            <a href="https://kura.io/eevee/">eevee</a> theme.
                         </li>
                     </ul>
                 </div>

@@ -249,3 +249,9 @@ th {
     color: #ffffff;
     text-decoration: none;
 }
+
+img.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
