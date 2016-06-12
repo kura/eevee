@@ -253,8 +253,8 @@ If set, Twitter meta tags will be added.
 
 Used in conjunction with ``USE_TWITTER_CARDS``, adds the "via" meta tag.
 
-Adding images to Open Graph and Twitter
----------------------------------------
+Adding an image to Open Graph and Twitter meta tags
+---------------------------------------------------
 
 There are two ways of adding an image to Twitter and Open Graph so that when
 someone shares your content, an image will be added too.
