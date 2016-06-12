@@ -1,19 +1,26 @@
-{% if article %}
+{% if article or page %}
     <div>
-        <a href="https://twitter.com/share?text={{ article.title|striptags }} on"
+        {% if article %}
+            {% set share_title = article.title %}
+            {% set share_url = SITEURL ~ '/' ~ article.url %}
+        {% elif page %}
+            {% set share_title = page.title %}
+            {% set share_url = SITEURL ~ '/' ~ page.url %}
+        {% endif %}
+        <a href="https://twitter.com/share?text={{ share_title|striptags }}"
            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;">
             <i class="fa fa-twitter mdl-color-text--primary"
                aria-hidden="true"></i>
         </a>
     </div>
     <div>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL ~ '/' ~ article.url|urlencode }}"
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url|urlencode }}"
            onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;">
             <i class="fa fa-facebook mdl-color-text--primary" aria-hidden="true"></i>
        </a>
     </div>
     <div>
-        <a href="https://plus.google.com/share?url={{ SITEURL }}/{{ article.url }}"
+        <a href="https://plus.google.com/share?url={{ share_url }}"
            onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
             <i class="fa fa-google mdl-color-text--primary"
                aria-hidden="true"></i>

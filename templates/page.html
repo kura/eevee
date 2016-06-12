@@ -3,6 +3,12 @@
 {% block content %}
 <article>
     <div class="eevee-padding">
+        <div class="eevee-meta mdl-color-text--grey-500">
+            <div class="eevee-spacer"></div>
+            <div class="meta__share">
+                {% include 'partials/share.html' %}
+            </div>
+        </div>
         <h2>
             <a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark"
                title="Permalink to {{ page.title|striptags }}">
