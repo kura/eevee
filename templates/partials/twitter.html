@@ -18,44 +18,26 @@
               content="{{ SITEURL }}/{{ article.url }}" />
         <meta property="twitter:description"
               content="{{ article.summary|striptags|escape }}" />
-        {% if article.og_image %}
-            <meta property="twitter:image"
-                  content="{{ SITEURL }}/{{ article.og_image }}" />
-            <meta property="twitter:card"
-                  content="summary_large_image" />
-        {% elif OPEN_GRAPH_IMAGE %}
-            <meta property="twitter:image"
-                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}" />
-            <meta property="twitter:card" content="summary_large_image" />
-        {% else %}
-            <meta property="twitter:card" content="summary" />
-        {% endif %}
+        <meta property="twitter:image"
+              content="{{ SITEURL }}/{{ article.url }}index.png" />
+        <meta property="twitter:card" content="summary_large_image" />
     {% elif page %}
         <meta property="twitter:title"
               content="{{ page.title|striptags|escape }}" />
         <meta property="twitter:url"
-              content="{{ SITEURL }}/{{ page.url}}" />
-        {% if page.og_image %}
-            <meta property="twitter:image"
-                  content="{{ SITEURL }}/{{ page.og_image }}" />
-            <meta property="twitter:card" content="summary_large_image" />
-        {% elif OPEN_GRAPH_IMAGE %}
-            <meta property="twitter:image"
-                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}" />
-            <meta property="twitter:card" content="summary_large_image" />
-        {% else %}
-            <meta property="twitter:card" content="summary" />
-        {% endif %}
+              content="{{ SITEURL }}/{{ page.url }}" />
+        <meta property="twitter:description"
+              content="{{ page.summary|striptags|escape }}" />
+        <meta property="twitter:image"
+              content="{{ SITEURL }}/{{ page.url }}index.png" />
+        <meta property="twitter:card" content="summary_large_image" />
     {% else %}
         <meta property="twitter:title"
               content="{{ SITENAME|striptags|escape }}" />
         <meta property="twitter:url"
               content="{{ SITEURL }}/{{ output_file }}" />
-        {% if OPEN_GRAPH_IMAGE %}
-            <meta property="twitter:image"
-                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}" />
-        {% else %}
-            <meta property="twitter:card" content="summary" />
-        {% endif %}
+        <meta property="twitter:image"
+              content="{{ SITEURL }}/{{ output_file|replace('.html', '.png') }}" />
+        <meta property="twitter:card" content="summary_large_image" />
     {% endif %}
 {% endif %}
