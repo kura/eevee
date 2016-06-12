@@ -244,3 +244,8 @@ th {
     -ms-flex-direction: column;
     flex-direction: column;
 }
+
+.eevee-footer a, .mdl-logo a {
+    color: #ffffff;
+    text-decoration: none;
+}

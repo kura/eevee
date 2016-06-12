@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Tags{% endblock %}
+{% block content %}
+    <div class="eevee-padding">
+        <section class="eevee-toc">
+            <h2>Tags</h2>
+            <nav class="eevee-toc-ribbon">
+                <ul>
+                    {% for tag, articles in tags|sort %}
+                        <li>
+                            <a href="{{ SITEURL }}/{{ tag.url }}">
+                                {{ tag }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </section>
+    </div>
+{% endblock %}

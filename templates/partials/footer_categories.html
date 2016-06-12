@@ -1,0 +1,10 @@
+{% if DISPLAY_CATEGORIES_ON_MENU != False %}
+    <div class="mdl-mega-footer--drop-down-section">
+        <h1 class="mdl-mega-footer--heading">Categories</h1>
+        <ul class="mdl-mega-footer--link-list">
+            {% for cat, null in categories  %}
+                <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

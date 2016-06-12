@@ -1,0 +1,10 @@
+{% if LINKS %}
+    <div class="mdl-mega-footer--drop-down-section">
+        <h1 class="mdl-mega-footer--heading">Links</h1>
+        <ul class="mdl-mega-footer--link-list">
+            {% for title, url in LINKS %}
+                <li><a href="{{ url }}">{{ title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

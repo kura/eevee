@@ -1,0 +1,15 @@
+{% if MENUITEMS %}
+    <div class="mdl-mega-footer--drop-down-section">
+        <h1 class="mdl-mega-footer--heading">Menu</h1>
+        <ul class="mdl-mega-footer--link-list">
+            {% for title, url in MENUITEMS %}
+                <li><a href="{{ url }}">{{ title }}</a></li>
+            {% endfor %}
+            {% if DISPLAY_PAGES_ON_MENU != False %}
+                {% for page in PAGES %}
+                    <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+{% endif %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Authors{% endblock %}
+{% block content %}
+    <div class="eevee-padding">
+        <section class="eevee-toc">
+            <h2>Authors</h2>
+            <nav class="eevee-toc-ribbon">
+                <ul>
+                    {% for author, articles in authors|sort %}
+                        <li>
+                            <a href="{{ SITEURL }}/{{ author.url }}">
+                                {{ author }} ({{ articles|count }} articles)
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </section>
+    </div>
+{% endblock %}

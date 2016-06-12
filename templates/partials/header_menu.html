@@ -1,0 +1,16 @@
+<nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only">
+    {% for title, url in MENUITEMS %}
+        <a class="mdl-color-text--accent mdl-navigation__link"
+           href="{{ url }}">
+            {{ title }}
+        </a>
+    {% endfor %}
+    {% if DISPLAY_PAGES_ON_MENU != False %}
+        {% for page in PAGES %}
+            <a class="mdl-color-text--accent mdl-navigation__link"
+               href="{{ SITEURL }}/{{ page.url }}">
+                {{ page.title }}
+            </a>
+        {% endfor %}
+    {% endif %}
+</nav>

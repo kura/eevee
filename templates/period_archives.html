@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Archives for {{ period | reverse | join(' ') }}{% endblock %}
+{% block content %}
+    <div class="eevee-padding">
+        {% for article in dates %}
+            <h2>Archives for {{ period | reverse | join(' ') }}</h2>
+            <article>
+                <h3>{{ article.locale_date }}</h3>
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+                   title="Permalink to {{ article.title|striptags }}">
+                    {{ article.title }}
+                </a>
+            </article>
+        {% endfor %}
+    </div>
+    {% include 'partials/pagination.html' %}
+{% endblock %}
