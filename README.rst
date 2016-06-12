@@ -21,19 +21,20 @@ for the accent, both of these colours are configurable.
 Features
 ========
 
-- Built around Google's Material Design
-- Configurable colour scheme
-- DNS prefetching
-- Disqus
-- Share buttons for Twitter, Facebook and Google+
-- Twitter and Open Graph meta tags
-- CSS minifying via webassets and cssmin
-- No JavaScript but can include Material Design Lite's javascript
-- Google Analytics
-- Piwik
-- Easy menu and footer customisation
-- Custom 404 page
-- Includes Material Icons, Font Awesome and Roboto font
+- Built around Google's Material Design specification,
+- configurable colour scheme,
+- DNS prefetching,
+- Disqus,
+- share buttons for Twitter, Facebook and Google+,
+- Twitter and Open Graph meta tags,
+- CSS minifying via webassets and cssmin,
+- Google Analytics,
+- Piwik,
+- easy menu and footer customisation,
+- custom 404 error page,
+- includes Material Icons, Font Awesome and Roboto font,
+- and no additional javascript loading, except if you enable Google Analytics
+  or Piwik.
 
 Typography
 ==========
