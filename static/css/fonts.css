@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'),
+       local('Roboto-Light'),
+       url('/theme/fonts/roboto-light.woff2') format('woff2'),
+       url('/theme/fonts/roboto-light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'),
+       local('Roboto-Regular'),
+       url('/theme/fonts/roboto-regular.woff2') format('woff2'),
+       url('/theme/fonts/roboto-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'),
+       local('Roboto-Medium'),
+       url('/theme/fonts/roboto-medium.woff2') format('woff2'),
+       url('/theme/fonts/roboto-medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'),
+       local('Roboto-Bold'),
+       url('/theme/fonts/roboto-bold.woff2') format('woff2'),
+       url('/theme/fonts/roboto-bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-style: normal;
+    src: local('Font Awesome'),
+         local('Font-Awesome'),
+         url('/theme/fonts/fontawesome.woff2') format('woff2'),
+         url('/theme/fonts/fontawesome.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url('/theme/fonts/materialicons-regular.woff2') format('woff2'),
+       url('/theme/fonts/materialicons-regular.woff') format('woff');
+}
