@@ -1,30 +1,27 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title }}{%endblock%}
 {% block content %}
-<article>
-    <div class="eevee-padding">
-        <div class="eevee-meta mdl-color-text--grey-500">
-            <div class="eevee-spacer"></div>
-            <div class="meta__share">
-                {% include 'partials/share.html' %}
-            </div>
+    <article>
+        {% include 'partials/share.html' %}
+        <div class="eevee-page-spacer"></div>
+        <div class="eevee-page">
+            <h2>
+                <a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark"
+                   title="Permalink to {{ page.title|striptags }}">
+                    {{ page.title }}
+                </a>
+            </h2>
+            {% if page.toc %}
+                <section class="eevee-toc">
+                    <h2>Contents</h2>
+                    <nav class="eevee-toc-ribbon">
+                        {{ page.toc }}
+                    </nav>
+                </section>
+            {% endif %}
+            <section>
+                {{ page.content }}
+            </section>
         </div>
-        <h2>
-            <a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark"
-               title="Permalink to {{ page.title|striptags }}">
-                {{ page.title }}
-            </a>
-        </h2>
-        {% if page.toc %}
-        <section class="eevee-toc">
-            <h2>Contents</h2>
-            <nav class="eevee-toc-ribbon">
-                {{ page.toc }}
-            </nav>
-        </section>
-        {% endif %}
-        <section class="post-content">
-            {{ page.content }}
-        </section>
     </article>
 {% endblock %}

@@ -1,5 +1,7 @@
+{% if MUUT_SITENAME is not defined %}
+    {% set MUUT_SITENAME = False %}
+{% endif %}
 {% if article or page %}
-    <div>
         {% if article %}
             {% set share_title = article.title %}
             {% set share_url = SITEURL ~ '/' ~ article.url %}
@@ -7,26 +9,41 @@
             {% set share_title = page.title %}
             {% set share_url = SITEURL ~ '/' ~ page.url %}
         {% endif %}
-        <a href="https://twitter.com/intent/tweet?text={{ share_title|striptags|urlencode }}&amp;url={{ share_url|urlencode }}{% if TWITTER_USERNAME %}&amp;related={{ TWITTER_USERNAME }}{% endif %}"
-           title="Share '{{ share_title|striptags }}' on Twitter"
-           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;">
-            <i class="fa fa-twitter mdl-color-text--primary"
-               aria-hidden="true"></i>
-        </a>
-    </div>
-    <div>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url|urlencode }}"
-           title="Share '{{ share_title|striptags }}' on Facebook"
-           onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;">
-            <i class="fa fa-facebook mdl-color-text--primary" aria-hidden="true"></i>
-       </a>
-    </div>
-    <div>
-        <a href="https://plus.google.com/share?url={{ share_url|urlencode }}"
-           title="Share '{{ share_title|striptags }}' on Google+"
-           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-            <i class="fa fa-google mdl-color-text--primary"
-               aria-hidden="true"></i>
-        </a>
-    </div>
+    <div class="eevee-meta eevee-share">
+        <div class="mdl-layout-spacer"></div>
+        <div>
+            <ul class="social-share mdl-navigation">
+                <li class="social-share__link social-share__link--twitter">
+                    <a href="https://twitter.com/intent/tweet?text={{ share_title|striptags|urlencode }}&amp;url={{ share_url|urlencode }}{% if TWITTER_USERNAME %}&amp;related={{ TWITTER_USERNAME }}{% endif %}"
+                       title="Share '{{ share_title|striptags }}' on Twitter"
+                       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="social-share__link social-share__link--facebook">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url|urlencode }}"
+                       title="Share '{{ share_title|striptags }}' on Facebook"
+                       onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="social-share__link social-share__link--google-plus">
+                    <a href="https://plus.google.com/share?url={{ share_url|urlencode }}"
+                       title="Share '{{ share_title|striptags }}' on Google+"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                        <i class="fa fa-google" aria-hidden="true"></i>
+                    </a>
+                </li>
+                {% if article %}
+                    {% if MUUT_SITENAME or DISQUS_SITENAME %}
+                        <li class="social-share__link social-share__link--comment">
+                            <a href="#article-comments" title="Discuss '{{ share_title|striptags }}'">
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                     {% endif %}
+                 {% endif %}
+             </ul>
+         </div>
+     </div>
 {% endif %}

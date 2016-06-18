@@ -1,14 +1,16 @@
+{% if MUUT_SITENAME is not defined %}
+    {% set MUUT_SITENAME = False %}
+{% endif %
 {% extends "base.html" %}
 {% block title %}{{ article.title }}{% endblock %}
 {% block content %}
     <article>
-        <div class="eevee-padding">
+        {% include 'partials/share.html' %}
+        <div class="eevee-article eevee-article-padding">
             <div class="eevee-meta mdl-color-text--grey-500">
-                <div>{{ article.locale_date }}</div>
-                <div class="eevee-spacer"></div>
-                <div class="meta__share">
-                    {% include 'partials/share.html' %}
-                </div>
+                <time datetime="{{ article.locale_date }}">
+                    {{ article.locale_date }}
+                </time>
             </div>
             <h2>
                 <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
@@ -24,10 +26,19 @@
                     </nav>
                 </section>
             {% endif %}
-            <section class="post-content">
+            <section>
                 {{ article.content }}
             </section>
         </div>
-        <div class="eevee-comment">{% include 'partials/disqus.html' %}</div>
+        {% if DISQUS_SITENAME or MUUT_SITENAME %}
+            <div class="eevee-comment">
+                <a name="article-comments"></a>
+                {% if DISQUS_SITENAME %}
+                    {% include 'partials/disqus.html' %}
+                {% elif MUUT_SITENAME %}
+                    {% include 'partials/muut.html' %}
+                {% endif %}
+            </div>
+        {% endif %}
     </article>
 {% endblock %}

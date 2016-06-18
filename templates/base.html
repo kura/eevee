@@ -19,15 +19,13 @@
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 </head>
 <body>
-    <div class="eevee-layout mdl-layout mdl-layout--fixed-header
-                mdl-js-layout mdl-color--grey-100">
-       <header class="eevee-header mdl-layout__header
-                      mdl-layout__header--scroll mdl-color--grey-100
-                      mdl-color-text--grey-800">
+    <div class="eevee-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+       <header class="eevee-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
            <div class="mdl-layout__header-row">
-                <span class="eevee-logo mdl-color-text--accent
-                             mdl-layout-title">
-                   <h3><a href="{{ SITEURL }}">{{ SITENAME }}</a></h3>
+                <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
+                   <h3>
+                       <a href="{{ SITEURL }}" name="top">{{ SITENAME }}</a>
+                   </h3>
                 </span>
                 <div class="mdl-layout-spacer"></div>
                 {% include 'partials/header_menu.html' %}
@@ -36,14 +34,24 @@
         <div class="eevee-ribbon mdl-color--primary-dark"></div>
         <main class="eevee-main mdl-layout__content">
             <div class="eevee-container mdl-grid">
-                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet
-                            mdl-cell--hide-phone"></div>
-                <div class="eevee-content mdl-color--white mdl-shadow--4dp
-                            mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+                <div class="eevee-content mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
                     {% block content %}{% endblock %}
                 </div>
             </div>
             <footer class="mdl-mega-footer">
+                <div class="mdl-mega-footer--top-section">
+                    <div class="mdl-mega-footer--drop-down-section">
+                        <ul class="mdl-mega-footer--link-list">
+                            <li>
+                                <a href="#top"
+                                   title="Back to the top of the page">
+                                    Back to the top of the page
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 {% if MEGA_FOOTER == True %}
                     {% include 'partials/mega_footer.html' %}
                 {% endif %}
