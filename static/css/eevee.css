@@ -7,7 +7,7 @@ pre, code, blockquote {
     box-sizing: border-box;
     margin: 1.6em 0 1.6em -2.2em;
     padding: 0 0 0 1.6em;
-    border-left: #424242 0.4em solid;
+    border-left: rgb(66, 66, 66) 0.4em solid;
     font-size: 14px;
 }
 
@@ -16,7 +16,7 @@ table {
     border: 1px solid rgba(0, 0, 0, .12);
     border-collapse: collapse;
     white-space: nowrap;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
 }
 
 thead {
@@ -32,7 +32,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-    background-color: #eee;
+    background-color: rgb(238, 238, 238);
 }
 
 td {
@@ -130,6 +130,10 @@ th {
     padding: 56px;
 }
 
+div.section {
+    padding: 10px 0;
+}
+
 div.eevee-page-spacer {
     height: 56px;
 }
@@ -173,7 +177,7 @@ div.eevee-page-spacer {
     box-sizing: border-box;
     margin: 1.6em 0 3em -2.2em;
     padding: 0.2em 0 0.2em 1.6em;
-    border-left: #424242 0.4em solid;
+    border-left: rgb(66, 66, 66) 0.4em solid;
 }
 
 .eevee-toc ul {
@@ -199,7 +203,7 @@ div.eevee-page-spacer {
 }
 
 .eevee-comment {
-    background-color: #f5f5f5;
+    background-color: rgb(245, 245, 245);
     padding: 10px 56px 20px 56px;
 }
 
@@ -233,7 +237,7 @@ div.eevee-comment div.muut {
 }
 
 .eevee-footer a, .mdl-logo a {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
@@ -265,7 +269,7 @@ ul.social-share {
 .social-share__link > a {
     font-size: 22px;
     font-size: 2.2rem;
-    color: #fff;
+    color: rgb(255, 255, 255);
     display: block;
     height: 100%;
     width: 100%;
@@ -287,37 +291,37 @@ ul.social-share {
     padding: 0;
     -webkit-transition: background-color .3s ease-out 0s;
     transition: background-color .3s ease-out 0s;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .social-share__link--twitter {
-    background-color: #50ABF1;
+    background-color: rgb(80, 171, 241);
 }
 
 .social-share__link--twitter:hover {
-    background-color: #118FF0;
+    background-color: rgb(17, 143, 240);
 }
 
 .social-share__link--facebook {
-    background-color: #3A5999;
+    background-color: rgb(58, 89, 153);
 }
 
 .social-share__link--facebook:hover {
-    background-color: #2059CE;
+    background-color: rgb(32, 89, 206);
 }
 
 .social-share__link--google-plus {
-    background-color: #DF4A30;
+    background-color: rgb(223, 74, 48);
 }
 
 .social-share__link--google-plus:hover {
-    background-color: #FF4221;
+    background-color: rgb(255, 66, 33);
 }
 
 .social-share__link--comment {
-    background-color: #00BDCF;
+    background-color: rgb(0, 189, 207);
 }
 
 .social-share__link--comment:hover {
-    background-color: #00D4E8;
+    background-color: rgb(0, 212, 232);
 }
