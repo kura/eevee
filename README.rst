@@ -24,17 +24,18 @@ Features
 - Built around Google's Material Design specification,
 - configurable colour scheme,
 - DNS prefetching,
-- Disqus,
+- comments from Disqus or Muut,
 - share buttons for Twitter, Facebook and Google+,
 - Twitter and Open Graph meta tags,
 - CSS minifying via webassets and cssmin,
-- Google Analytics,
-- Piwik,
+- analytics from Google Analytics and Piwik,
 - easy menu and footer customisation,
 - custom 404 error page,
 - includes Material Icons, Font Awesome and Roboto font,
-- and no additional javascript loading, except if you enable Google Analytics
-  or Piwik.
+- no additional javascript loading, except if you enable Google Analytics
+  or Piwik,
+- and allows upgrading of with `getmdl.io's Material
+  Javascript <https://getmdl.io/started/index.html#download>`__.
 
 Typography
 ==========
@@ -223,8 +224,15 @@ modified version `on GitHub
 <https://github.com/kura/kura.io/tree/master/plugins/extract_toc>`__ that
 returns nicer HTML.
 
-Using Disqus for comments
-=========================
+Using Disqus or Muut for comments
+=================================
+
+You can only enable `Disqus <https://disqus.com/home/>`__ or `Muut
+<https://muut.com/>`__, not both. Disqus takes priority over Muut
+in terms of how the configuration variables are handled.
+
+Disqus
+------
 
 .. code-block:: python
 
@@ -232,8 +240,34 @@ Using Disqus for comments
 
 Setting this option will enable Disqus for articles.
 
+Muut
+----
+
+.. code-block:: python
+
+    MUUT_SITENAME = 'somethinghere'
+
+Setting this option will enable Muut for articles.
+
 Sharing options
 ===============
+
+Share buttons
+-------------
+
+By default three share buttons are configured;
+
+- Twitter,
+- Facebook
+- and Google+
+
+These buttons will appear on all articles and pages.
+
+If you have comments enabled either using Disqus or Muut, on articles a fourth
+button will be shown which shows the user comments for the current article.
+
+Configuration options
+---------------------
 
 .. code-block:: python
 
