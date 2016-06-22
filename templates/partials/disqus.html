@@ -3,7 +3,7 @@
         <h2>Discuss</h2>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
-        var disqus_shortname='{{ DISQUS_SITENAME }}';disqus_identifier='/{{ article.url }}';disqus_url='{{ SITEURL }}/{{ article.url }}';;!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}();</script>
+            var disqus_shortname="{{ DISQUS_SITENAME }}",disqus_identifier="/{{ article.url }}",disqus_url="{{ SITEURL }}/{{ article.url }}";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}();
         <noscript>
             Please enable JavaScript to view the
             <a href="http://disqus.com/?ref_noscript">comments powered by
