@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.0.4
+-----
+
+- Accidentally messed up Disqus and variable names where not used, so comments
+  didn't actually work properly...
+- Load fonts from base64 in the CSS file.
+
 0.0.3
 -----
 
