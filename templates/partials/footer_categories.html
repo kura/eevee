@@ -3,7 +3,11 @@
         <h1 class="mdl-mega-footer--heading">Categories</h1>
         <ul class="mdl-mega-footer--link-list">
             {% for cat, null in categories  %}
-                <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                <li>
+                    <a href="{{ SITEURL }}/{{ cat.url }}" itemprop="url">
+                        {{ cat }}
+                    </a>
+                </li>
             {% endfor %}
         </ul>
     </div>

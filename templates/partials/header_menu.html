@@ -1,14 +1,16 @@
-<nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only">
+<nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Navigation">
     {% for title, url in MENUITEMS %}
         <a class="mdl-color-text--accent mdl-navigation__link"
-           href="{{ url }}">
+           href="{{ url }}" itemprop="url">
             {{ title }}
         </a>
     {% endfor %}
     {% if DISPLAY_PAGES_ON_MENU != False %}
         {% for page in PAGES %}
             <a class="mdl-color-text--accent mdl-navigation__link"
-               href="{{ SITEURL }}/{{ page.url }}">
+               href="{{ SITEURL }}/{{ page.url }}" itemprop="url">
                 {{ page.title }}
             </a>
         {% endfor %}

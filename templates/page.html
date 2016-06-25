@@ -1,13 +1,25 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title }}{%endblock%}
 {% block content %}
-    <article>
+    <article itemscope
+             itemtype="http://schema.org/WebPage">
+        <meta itemprop="accessibilityControl" content="fullKeyboardControl" />
+        <meta itemprop="accessibilityControl" content="fullMouseControl" />
+        <meta itemprop="accessibilityControl" content="bookmarks" />
+        <meta itemprop="accessibilityAPI" content="ARIA" />
+        <div itemprop="author" itemscope
+             itemtype="https://schema.org/Person" role="presentation">
+            <meta itemprop="name" content="{{ page.author.name }}" />
+            <meta itemprop="url"
+                  content="{{ SITEURL }}/{{ page.author.url }}" />
+        </div>
         {% include 'partials/share.html' %}
-        <div class="eevee-page-spacer"></div>
+        <div class="eevee-page-spacer" role="presentation"></div>
         <div class="eevee-page">
-            <h2>
+            <h2 itemprop="name">
                 <a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark"
-                   title="Permalink to {{ page.title|striptags }}">
+                   title="Permalink to '{{ page.title|striptags }}'"
+                   itemprop="url">
                     {{ page.title }}
                 </a>
             </h2>
@@ -19,7 +31,7 @@
                     </nav>
                 </section>
             {% endif %}
-            <section>
+            <section itemprop="mainContentOfPage">
                 {{ page.content }}
             </section>
         </div>

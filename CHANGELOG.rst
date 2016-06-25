@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.0.5
+-----
+
+- Template clean up, mostly making the HTML itself look prettier to edit.
+- Added aria labels to elements to improve accessibility.
+- Added structures to articles and pages, using `schema.org
+  <https://schema.org/>`__ additional markup.
+
 0.0.4
 -----
 

@@ -4,17 +4,36 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title }}{% endblock %}
 {% block content %}
-    <article>
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+        <meta itemprop="accessibilityControl" content="fullKeyboardControl" />
+        <meta itemprop="accessibilityControl" content="fullMouseControl" />
+        <meta itemprop="accessibilityControl" content="bookmarks" />
+        <meta itemprop="accessibilityAPI" content="ARIA" />
+        <div itemprop="author" itemscope
+             itemtype="https://schema.org/Person">
+            <meta itemprop="name" content="{{ article.author.name }}" />
+            <meta itemprop="url"
+                  content="{{ SITEURL }}/{{ article.author.url }}" />
+        </div>
+        {% if article.tags %}
+            <meta itemprop="keywords"
+                  content="{% for tag in article.tags %}{{ tag }}{% if not loop.last %},{% endif %}{% endfor %}" />
+        {% endif %}
+        {% if article.category %}
+            <meta itemprop="keywords" content="{{ article.category }}" />
+        {% endif %}
         {% include 'partials/share.html' %}
         <div class="eevee-article eevee-article-padding">
             <div class="eevee-meta mdl-color-text--grey-500">
-                <time datetime="{{ article.locale_date }}">
+                <time datetime="{{ article.date.isoformat() }}"
+                      itemprop="datePublished">
                     {{ article.locale_date }}
                 </time>
             </div>
-            <h2>
+            <h2 itemprop="name">
                 <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                   title="Permalink to {{ article.title|striptags }}">
+                   title="Permalink to '{{ article.title|striptags }}'"
+                   itemprop="url">
                     {{ article.title }}
                 </a>
             </h2>
@@ -26,18 +45,20 @@
                     </nav>
                 </section>
             {% endif %}
-            <section>
+            <section itemprop="articleBody">
                 {{ article.content }}
             </section>
         </div>
         {% if DISQUS_SITENAME or MUUT_SITENAME %}
-            <div class="eevee-comment">
-                <a name="article-comments"></a>
-                {% if DISQUS_SITENAME %}
-                    {% include 'partials/disqus.html' %}
-                {% elif MUUT_SITENAME %}
-                    {% include 'partials/muut.html' %}
-                {% endif %}
+            <div class="eevee-comment" id="article-comments">
+                <section itemscope itemtype='http://schema.org/UserComments'>
+                    <h2>Discuss</h2>
+                    {% if DISQUS_SITENAME %}
+                        {% include 'partials/disqus.html' %}
+                    {% elif MUUT_SITENAME %}
+                        {% include 'partials/muut.html' %}
+                    {% endif %}
+                </section>
             </div>
         {% endif %}
     </article>
