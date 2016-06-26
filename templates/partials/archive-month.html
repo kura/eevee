@@ -1,0 +1,23 @@
+{% for month, articles in date_year|groupby('date.month')|sort(reverse=True) %}
+    <li>
+        <h3>
+            {% if MONTH_ARCHIVE_SAVE_AS %}
+                <a href="{{ SITEURL }}/{{ year }}/{{ articles[0].date.strftime('%m') }}/"
+                   rel="bookmark" title="Archives for {{ articles[0].date.strftime('%B') }} {{ year }}"
+                   itemprop="url">
+                    {{ articles[0].date.strftime('%B') }}
+                </a>
+            {% else %}
+                {{ articles[0].date.strftime('%B') }}
+            {% endif %}
+        </h3>
+    </li>
+    {% for article in articles|sort(reverse=True) %}
+        <li>
+            <a href="{{ article.url }}"
+               itemprop="url" rel="bookmark">
+                {{ article.title }}
+            </a>
+        </li>
+    {% endfor %}
+{% endfor %}

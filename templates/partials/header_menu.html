@@ -1,18 +1,34 @@
 <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only" itemscope
      itemtype="http://schema.org/SiteNavigationElement"
-     aria-label="Navigation">
+     aria-label="Header navigation">
     {% for title, url in MENUITEMS %}
         <a class="mdl-color-text--accent mdl-navigation__link"
-           href="{{ url }}" itemprop="url">
+           href="{{ url }}" itemprop="url" rel="bookmark">
             {{ title }}
         </a>
     {% endfor %}
     {% if DISPLAY_PAGES_ON_MENU != False %}
         {% for page in PAGES %}
             <a class="mdl-color-text--accent mdl-navigation__link"
-               href="{{ SITEURL }}/{{ page.url }}" itemprop="url">
+               href="{{ SITEURL }}/{{ page.url }}" itemprop="url"
+               rel="bookmark">
                 {{ page.title }}
             </a>
         {% endfor %}
+    {% endif %}
+    {% if ARCHIVES_SAVE_AS %}
+        <a class="mdl-color-text--accent mdl-navigation__link"
+           href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"
+           itemprop="url" rel="bookmark">
+            <i class="material-icons">folder</i> Archives
+        </a>
+    {% endif %}
+    {% if FEED_RSS or FEED_ATOM %}
+        <a class="mdl-color-text--accent mdl-navigation__link"
+           href="{{ SITEURL }}/{{ FEED_RSS if FEED_RSS else FEED_ATOM }}"
+           title="{{ 'RSS' if FEED_RSS else 'Atom' }} Feed" itemprop="url">
+            <i class="material-icons">rss_feed</i>
+            {{ 'RSS' if FEED_RSS else 'Atom' }}
+        </a>
     {% endif %}
 </nav>

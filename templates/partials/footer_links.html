@@ -3,7 +3,11 @@
         <h1 class="mdl-mega-footer--heading">Links</h1>
         <ul class="mdl-mega-footer--link-list">
             {% for title, url in LINKS %}
-                <li><a href="{{ url }}" itemprop="url">{{ title }}</a></li>
+                <li>
+                    <a href="{{ url }}" itemprop="url" rel="bookmark">
+                        {{ title }}
+                    </a>
+                </li>
             {% endfor %}
         </ul>
     </div>

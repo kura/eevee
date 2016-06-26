@@ -24,9 +24,12 @@
                itemscope itemtype="http://schema.org/WPHeader">
            <div class="mdl-layout__header-row" id="top">
                 <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
-                   <h3>
-                       <a href="{{ SITEURL }}">{{ SITENAME }}</a>
-                   </h3>
+                    <h3>
+                        <a href="{{ SITEURL }}" rel="bookmark"
+                           title="{{ SITENAME }}">
+                            {{ SITENAME }}
+                        </a>
+                    </h3>
                 </span>
                 <div class="mdl-layout-spacer" role="presentation"></div>
                 {% include 'partials/header_menu.html' %}
@@ -63,7 +66,10 @@
                 {% endif %}
                 <div class="mdl-mega-footer--bottom-section">
                     <div class="mdl-logo">
-                        <a href="{{ SITEURL }}">{{ SITENAME }}</a>
+                        <a href="{{ SITEURL }}" rel="bookmark"
+                           title="{{ SITENAME }}">
+                            {{ SITENAME }}
+                        </a>
                     </div>
                     <ul class="eevee-footer mdl-mega-footer--link-list">
                         <li>

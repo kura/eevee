@@ -1,18 +1,8 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title }}{%endblock%}
 {% block content %}
-    <article itemscope
-             itemtype="http://schema.org/WebPage">
-        <meta itemprop="accessibilityControl" content="fullKeyboardControl" />
-        <meta itemprop="accessibilityControl" content="fullMouseControl" />
-        <meta itemprop="accessibilityControl" content="bookmarks" />
-        <meta itemprop="accessibilityAPI" content="ARIA" />
-        <div itemprop="author" itemscope
-             itemtype="https://schema.org/Person" role="presentation">
-            <meta itemprop="name" content="{{ page.author.name }}" />
-            <meta itemprop="url"
-                  content="{{ SITEURL }}/{{ page.author.url }}" />
-        </div>
+    <article itemscope itemtype="http://schema.org/WebPage">
+        {% include 'partials/structured_data.html' %}
         {% include 'partials/share.html' %}
         <div class="eevee-page-spacer" role="presentation"></div>
         <div class="eevee-page">

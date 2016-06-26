@@ -1,6 +1,17 @@
 Changelog
 =========
 
+0.0.6
+-----
+
+- Updated archive templates so they aren't terrible.
+  - archive will automatically links to year and month archives if
+    ``YEAR_ARCHIVE_SAVE_AS`` or ``MONTH_ARCHIVE_SAVE_AS`` are set.
+- partial_archives template now works as expected instead of showing every
+  article.
+- Added archive to header and footer menus.
+
+
 0.0.5
 -----
 

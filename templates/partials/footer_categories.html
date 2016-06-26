@@ -4,7 +4,8 @@
         <ul class="mdl-mega-footer--link-list">
             {% for cat, null in categories  %}
                 <li>
-                    <a href="{{ SITEURL }}/{{ cat.url }}" itemprop="url">
+                    <a href="{{ SITEURL }}/{{ cat.url }}" itemprop="url"
+                       rel="bookmark">
                         {{ cat }}
                     </a>
                 </li>

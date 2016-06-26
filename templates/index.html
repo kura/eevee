@@ -1,48 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-{% for article in (articles_page.object_list if articles_page else articles) %}
-    <article class="eevee-padding" itemscope
-             itemtype="http://schema.org/BlogPosting">
-        <meta itemprop="accessibilityControl" content="fullKeyboardControl" />
-        <meta itemprop="accessibilityControl" content="fullMouseControl" />
-        <meta itemprop="accessibilityControl" content="bookmarks" />
-        <meta itemprop="accessibilityAPI" content="ARIA" />
-        <div itemprop="author" itemscope
-             itemtype="https://schema.org/Person" role="presentation">
-            <meta itemprop="name" content="{{ article.author.name }}" />
-            <meta itemprop="url"
-                  content="{{ SITEURL }}/{{ article.author.url }}" />
-        </div>
-        {% if article.tags %}
-            <meta itemprop="keywords"
-                  content="{% for tag in article.tags %}{{ tag }}{% if not loop.last %},{% endif %}{% endfor %}" />
-        {% endif %}
-        {% if article.category %}
-            <meta itemprop="keywords" content="{{ article.category }}" />
-        {% endif %}
-        <div class="eevee-meta mdl-color-text--grey-500">
-            <time datetime="{{ article.date.isoformat() }}"
-                  itemprop="datePublished">
-                {{ article.locale_date }}
-            </time>
-        </div>
-        <h2 itemprop="name">
-            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-               title="Permalink to '{{ article.title|striptags }}'"
-               itemprop="url">
-            {{ article.title }}
-            </a>
-        </h2>
-        <section itemprop="articleBody">
-            {{ article.summary }}
-        </section>
-        <div class="eevee-divider mdl-color--accent" role="presentation"></div>
-        <div class="eevee-divider-to-top">
-            <a href="#top" title="Back to the top of the page">
-                Back to the top of the page
-            </a>
-        </div>
-    </article>
-{% endfor %}
-{% include 'partials/pagination.html' %}
+    {% for article in (articles_page.object_list if articles_page else articles) %}
+        <article class="eevee-padding" itemscope
+                 itemtype="http://schema.org/BlogPosting">
+            {% include 'partials/structured_data.html' %}
+            <div class="eevee-meta mdl-color-text--grey-500">
+                <time datetime="{{ article.date.isoformat() }}"
+                      itemprop="datePublished">
+                    {{ article.locale_date }}
+                </time>
+            </div>
+            <h2 itemprop="name">
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+                   title="Permalink to '{{ article.title|striptags }}'"
+                   itemprop="url">
+                {{ article.title }}
+                </a>
+            </h2>
+            <section itemprop="articleBody">
+                {{ article.summary }}
+            </section>
+            <div class="eevee-divider mdl-color--accent" role="presentation"></div>
+            <div class="eevee-divider-to-top">
+                <a href="#top" title="Back to the top of the page">
+                    Back to the top of the page
+                </a>
+            </div>
+        </article>
+    {% endfor %}
+    {% include 'partials/pagination.html' %}
 {% endblock content %}
