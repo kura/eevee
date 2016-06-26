@@ -14,8 +14,8 @@
     </li>
     {% for article in articles|sort(reverse=True) %}
         <li>
-            <a href="{{ article.url }}"
-               itemprop="url" rel="bookmark">
+            <a href="{{ SITEURL }}/{{ article.url }}" itemprop="url" rel="bookmark"
+               title="Permalink to '{{ article.title|striptags }}'">
                 {{ article.title }}
             </a>
         </li>
