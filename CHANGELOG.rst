@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.0.7
+-----
+
+- Fixed RSS and Atom having the wrong types.
+
 0.0.6
 -----
 

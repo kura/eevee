@@ -1,8 +1,8 @@
 {% if FEED_RSS %}
-    <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml"
+    <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/rss+xml"
           rel="alternate" title="{{ SITENAME }}" />
 {% endif %}
 {% if FEED_ATOM %}
-    <link href="{{ SITEURL }}/{{ FEED_ATOM }}" type="application/rss+xml"
+    <link href="{{ SITEURL }}/{{ FEED_ATOM }}" type="application/atom+xml"
           rel="alternate" title="{{ SITENAME }}" />
 {% endif %}
