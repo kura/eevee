@@ -1,20 +1,26 @@
 {% extends "base.html" %}
 {% block title %}Categories{% endblock %}
 {% block content %}
-    <div class="eevee-padding">
-        <section class="eevee-toc">
-            <h2>Categories</h2>
-            <nav class="eevee-toc-ribbon">
-                <ul>
-                    {% for category, articles in categories %}
-                        <li>
-                            <a href="{{ SITEURL }}/{{ category.url }}">
-                                {{ category }}
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </nav>
-        </section>
+    <article itemscope itemtype="http://schema.org/WebPage">
+        {% include 'partials/structured_data.html' %}
+        <div class="eevee-page-spacer" role="presentation"></div>
+        <div class="eevee-page">
+            <h2 itemprop="name">Categories</h2>
+            <section itemprop="mainContentOfPage" class="eevee-toc">
+                <nav class="eevee-toc-ribbon">
+                    <ul>
+                        {% for category, articles in categories|sort %}
+                            <li>
+                                <a href="{{ SITEURL }}/{{ category.url }}"
+                                   title="Articles with the '{{ category }}' category"
+                                    itemprop="url">
+                                    {{ category }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </section>
+        </div>
     </div>
 {% endblock %}

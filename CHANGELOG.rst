@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.0.8
+-----
+
+- Added better templates for `tags` and `categories`.
+
 0.0.7
 -----
 

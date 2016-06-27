@@ -40,7 +40,7 @@ Features
 Typography
 ==========
 
-.. image:: https://raw.githubusercontent.com/kura/eevee/master/eevee-typography.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/typography.png
     :alt: Eevee Typography
     :align: center
 
