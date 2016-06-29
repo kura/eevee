@@ -31,4 +31,19 @@
             {{ 'RSS' if FEED_RSS else 'Atom' }}
         </a>
     {% endif %}
+    {% if 'tipue_search' in PLUGINS %}
+        <div class="eevee-search-menu mdl-textfield">
+            <label class="mdl-color-text--accent mdl-button mdl-button--icon"
+                   for="tipue_search_input">
+                <i class="material-icons">search</i>
+            </label>
+            <div>
+                <form action="{{ SITEURL }}/search.html">
+                <input class="eevee-search-box mdl-textfield__input"
+                       type="text" name="q" id="tipue_search_input"
+                       autocomplete="off">
+                </form>
+            </div>
+        </div>
+    {% endif %}
 </nav>

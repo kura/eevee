@@ -1,8 +1,3 @@
-{% if article is defined %}
-    {% set obj = article %}
-{% elif page is defined %}
-    {% set obj = page %}
-{% endif %}
 <meta itemprop="accessibilityControl" content="fullKeyboardControl" />
 <meta itemprop="accessibilityControl" content="fullMouseControl" />
 <meta itemprop="accessibilityControl" content="bookmarks" />
@@ -19,9 +14,12 @@
 {% if obj is defined %}
     <div itemprop="author" itemscope
          itemtype="https://schema.org/Person" role="presentation">
-        <meta itemprop="name" content="{{ obj.author.name }}" />
-        <meta itemprop="url"
-              content="{{ SITEURL }}/{{ obj.author.url }}" />
+        <a href="{{ SITEURL }}/{{ obj.author.url }}" class="hidden"
+           itemprop="url" role="presentation">
+            <span class="hidden" itemprop="name" role="presentation">
+                {{ obj.author.name }}
+            </span>
+        </a>
     </div>
     {% if obj.tags %}
         <meta itemprop="keywords"

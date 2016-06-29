@@ -242,6 +242,12 @@ div.eevee-comment div.muut {
     text-decoration: none;
 }
 
+.mdl-mega-footer--link-list i.material-icons,
+.mdl-mega-footer__link-list i.material-icons {
+    font-size: 14px;
+    vertical-align: middle;
+}
+
 div.align-center img, img.align-center {
     display: block;
     margin-left: auto;
@@ -282,7 +288,6 @@ ul.social-share {
     text-align: right;
     float: right;
 }
-
 
 .social-share__link {
     float: left;
@@ -325,4 +330,61 @@ ul.social-share {
 
 .social-share__link--comment:hover {
     background-color: rgb(0, 212, 232);
+}
+
+.hidden {
+    display: none;
+}
+
+a.headerlink {
+    color: rgb(224, 224, 224);
+    vertical-align: text-top;
+    font-size: 40px;
+    padding: 0 4px;
+    text-decoration: none;
+    -webkit-transition: color 0.3s ease 0s !important;
+    transition: color 0.3s ease 0s !important;
+}
+
+a.headerlink:hover {
+    color: rgb(66, 66, 66) !important;
+}
+
+.summary-content a.headerlink {
+    display: none;
+}
+
+div.eevee-search-menu {
+    width: 200px !important;
+}
+
+input.eevee-search-box {
+    margin: 0 0 0 35px;
+}
+
+#tipue_search_content {
+    letter-spacing: 0;
+}
+
+#tipue_search_results_count {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+    margin: 24px 0;
+    padding: 0;
+    letter-spacing: 0;
+}
+
+.tipue_search_content_title > a  {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+    margin: 24px 0 24px -3px;
+    padding: 0;
+    letter-spacing: 0;
+    text-decoration: none;
+}
+
+.tipue_search_content_text {
+    padding: 0 0 30px 0;
 }

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Search{%endblock%}
+{% block content %}
+    {% if 'tipue_search' in PLUGINS %}
+        {% if 'assets' in PLUGINS %}
+            {% include 'partials/_minify_tipue.html' with context %}
+        {% else %}
+            <script type="text/javascript"
+                    src="{{ SITEURL }}/theme/js/jquery.js">
+            </script>
+            <script type="text/javascript"
+                    src="{{ SITEURL }}/theme/js/tipuesearch.js">
+            </script>
+            <script type="text/javascript"
+                    src="{{ SITEURL }}/theme/js/tipuesearch_set.js">
+            </script>
+        {% endif %}
+        <script type="text/javascript">
+            $(document).ready(function(){$("#tipue_search_input").tipuesearch({mode:"json",show:10,newWindow:!1,contentLocation:"{{ SITEURL }}/tipuesearch_content.json"})});
+        </script>
+        <article itemscope itemtype="http://schema.org/WebPage">
+            <div class="eevee-page">
+                <h2 itemprop="name">Search results</h2>
+                <div>
+                    <div id="tipue_search_content"></div>
+                </div>
+            </div>
+        </article>
+    {% else %}
+        <div class="eevee-padding">
+            <h2>Search results</h2>
+            <section class="post-content">
+                <p>You got here because the <tt>search.html</tt> page is
+                enabled but <tt>TIPUE_SEARCH</tt> is not enabled.</p>
+                <p>Please visit <a href="https://kura.io/eevee/#search">the
+                Eevee documentation</a> for information on configuring the
+                search functionality.</p>
+            </section>
+        </div>
+    {% endif %}
+{% endblock %}

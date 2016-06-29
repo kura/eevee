@@ -1,16 +1,10 @@
-{% if THEME_PRIMARY is not defined or THEME_ACCENT is not defined %}
-    {% set THEME_PRIMARY = 'blue_grey' %}
-    {% set THEME_ACCENT = 'pink' %}
-{% endif %}
-{% if MEGA_FOOTER is not defined %}
-    {% set MEGA_FOOTER = True %}
-{% endif %}
+{% include 'partials/_defaults.html' %}
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
 <head id="head">
     <meta charset="utf-8" />
     <meta name="viewport"
-          content="width=device-width,initial-scale=1,maximum-scale=1" />
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     {% include 'partials/prefetch.html' %}
     {% include 'partials/feeds.html' %}
     {% include 'partials/facebook.html' %}
@@ -71,12 +65,16 @@
                             {{ SITENAME }}
                         </a>
                     </div>
-                    <ul class="eevee-footer mdl-mega-footer--link-list">
-                        <li>
-                            Powered by love, rainbow sparkles &amp; the
-                            <a href="https://kura.io/eevee/">eevee</a> theme.
-                        </li>
-                    </ul>
+                    {% if DISCLAIMER or COPYRIGHT %}
+                        <ul class="eevee-footer mdl-mega-footer--link-list">
+                            {% if DISCLAIMER %}
+                                <li>{{ DISCLAIMER }}</li>
+                            {% endif %}
+                            {% if COPYRIGHT %}
+                                <li>{{ COPYRIGHT }}</li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
                 </div>
             </footer>
         </main>
@@ -84,11 +82,19 @@
 </body>
 <link rel="stylesheet"
       href="//code.getmdl.io/1.1.3/material.{{ THEME_PRIMARY }}-{{ THEME_ACCENT }}.min.css" />
-{% assets filters="cssmin", output="css/%(version)s.css",
-    "css/fonts.css", "css/font-awesome.css", "css/material-icons.css",
-    "css/pygments.css", "css/eevee.css" %}
-    <link rel="stylesheet" href="/{{ ASSET_URL }}" />
-{% endassets %}
-{% include 'partials/ga.html' %}
-{% include 'partials/piwik.html' %}
+{% if 'assets' in PLUGINS %}
+    {% include 'partials/_minify_css.html' with context %}
+{% else %}
+    <link rel="stylesheet" type="text/css"
+          href="{{ SITEURL }}/theme/css/fonts.css" />
+    <link rel="stylesheet" type="text/css"
+          href="{{ SITEURL }}/theme/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css"
+          href="{{ SITEURL }}/theme/css/material-icons.css" />
+    <link rel="stylesheet" type="text/css"
+          href="{{ SITEURL }}/theme/css/pygments.css" />
+    <link rel="stylesheet" type="text/css"
+          href="{{ SITEURL }}/theme/css/eevee.css" />
+{% endif %}
+{% include 'partials/analytics.html' %}
 </html>

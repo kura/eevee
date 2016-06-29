@@ -1,6 +1,3 @@
-{% if MUUT_SITENAME is not defined %}
-    {% set MUUT_SITENAME = False %}
-{% endif %}
 {% extends "base.html" %}
 {% block title %}{{ article.title }}{% endblock %}
 {% block content %}
@@ -29,7 +26,7 @@
                     </nav>
                 </section>
             {% endif %}
-            <section itemprop="articleBody">
+            <section itemprop="articleBody" class="article-content">
                 {{ article.content }}
             </section>
         </div>

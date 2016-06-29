@@ -1,6 +1,3 @@
 {% if PIWIK_SITE_ID and PIWIK_URL %}
-    {% if PIWIK_SSL_URL is not defined %}
-        {% set PIWIK_SSL_URL = PIWIK_URL %}
-    {% endif %}
     <script type="text/javascript">var _paq=_paq||[];_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var e="https:"==document.location.protocol?"https://{{ PIWIK_SSL_URL }}/":"http://{{ PIWIK_URL }}/";_paq.push(["setTrackerUrl",e+"piwik.php"]),_paq.push(["setSiteId","{{ PIWIK_SITE_ID }}"]);var t=document,p=t.createElement("script"),a=t.getElementsByTagName("script")[0];p.type="text/javascript",p.defer=!0,p.async=!0,p.src=e+"piwik.js",a.parentNode.insertBefore(p,a)}();</script>
 {% endif %}
