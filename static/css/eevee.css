@@ -203,8 +203,13 @@ div.eevee-page-spacer {
     padding-top: 10px;
 }
 
-.eevee-comment {
+div.eevee-related {
     background-color: rgb(245, 245, 245);
+    padding: 10px 56px 20px 56px;
+}
+
+div.eevee-comment {
+    background-color: rgb(238, 238, 238);
     padding: 10px 56px 20px 56px;
 }
 
@@ -220,7 +225,6 @@ div.eevee-comment div.muut {
 
 .eevee-pagination, .eevee-pagination a {
     text-decoration: none;
-    padding-top: 56px;
     box-sizing: border-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -387,4 +391,52 @@ input.eevee-search-box {
 
 .tipue_search_content_text {
     padding: 0 0 30px 0;
+}
+
+.lightbox {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+    right: 0;
+    bottom: 0;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox img {
+	max-width: 98%;
+	max-height: 90%;
+	margin-top: 2%;
+}
+
+.lightbox:target {
+	outline: none;
+	display: block;
+}
+
+.lightbox-divider {
+    background: rgb(224, 224, 224);
+    width: 100%;
+    height: 3px;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin: 30px 0;
+}
+
+.lightbox-divider:last-child {
+    background: none;
+    width: 100%;
+    height: 0;
+    margin: 0;
+}
+
+li.series-active, li.series-active a {
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(66, 66, 66);
 }

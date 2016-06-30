@@ -18,6 +18,27 @@
                     {{ article.title }}
                 </a>
             </h2>
+            {% if article.series %}
+                <section>
+                    <p>
+                        This is part {{ article.series.index }} of the
+                        "{{ article.series.name }}" series.
+                    </p>
+                    <ol class="series-parts">
+                        {% for part_article in article.series.all %}
+                            <li {% if part_article == article %}
+                                class="series-active"
+                            {% endif %}>
+                                <a href="{{ SITEURL }}/{{ part_article.url }}"
+                                   title="{{ part_article.title|striptags }}"
+                                   itemprop="url">
+                                    {{ part_article.title|striptags }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                    </section>
+            {% endif %}
             {% if article.toc %}
                 <section class="eevee-toc">
                     <h2>Contents</h2>
@@ -30,6 +51,7 @@
                 {{ article.content }}
             </section>
         </div>
+        {% include 'partials/related.html' %}
         {% include 'partials/comment.html' %}
     </article>
 {% endblock %}

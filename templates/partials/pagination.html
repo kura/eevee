@@ -20,30 +20,44 @@
                 </button>
                 Newer
             </a>
+        {% elif article is defined and article.next_article %}
+            <a href="{{ SITEURL }}/{{ article.next_article.url }}"
+               class="eevee-nav__button" itemprop="url" rel="bookmark"
+               title="Newer">
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                    <i class="material-icons">arrow_back</i>
+                </button>
+                Newer
+            </a>
         {% endif %}
         <div class="eevee-spacer"></div>
-        {% if articles_page is defined %}
-            {% if articles_page.has_next() %}
-                <a href="{{ SITEURL }}/{{ articles_next_page.url }}"
-                   class="eevee-nav__button" itemprop="url" rel="bookmark"
-                   title="Older">
-                    Older
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                        <i class="material-icons">arrow_forward</i>
-                    </button>
-                </a>
-            {% endif %}
-        {% elif dates_page is defined %}
-            {% if dates_page.has_next() %}
-                <a href="{{ SITEURL }}/{{ dates_next_page.url }}"
-                   class="eevee-nav__button" itemprop="url" rel="bookmark"
-                   title="Older">
-                    Older
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                        <i class="material-icons">arrow_forward</i>
-                    </button>
-                </a>
-            {% endif %}
+        {% if articles_page is defined and articles_page.has_next() %}
+            <a href="{{ SITEURL }}/{{ articles_next_page.url }}"
+               class="eevee-nav__button" itemprop="url" rel="bookmark"
+               title="Older">
+                Older
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                    <i class="material-icons">arrow_forward</i>
+                </button>
+            </a>
+        {% elif dates_page is defined and dates_page.has_next() %}
+            <a href="{{ SITEURL }}/{{ dates_next_page.url }}"
+               class="eevee-nav__button" itemprop="url" rel="bookmark"
+               title="Older">
+                Older
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                    <i class="material-icons">arrow_forward</i>
+                </button>
+            </a>
+        {% elif article is defined and article.prev_article %}
+            <a href="{{ SITEURL }}/{{ article.prev_article.url }}"
+               class="eevee-nav__button" itemprop="url" rel="bookmark"
+               title="Older">
+                Older
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                    <i class="material-icons">arrow_forward</i>
+                </button>
+            </a>
         {% endif %}
     </nav>
 {% endif %}

@@ -41,43 +41,51 @@
                     {% block content %}{% endblock %}
                 </div>
             </div>
-            <footer class="mdl-mega-footer" itemscope
-                    itemtype="http://schema.org/SiteNavigationElement">
-                <div class="mdl-mega-footer--top-section">
-                    <div class="mdl-mega-footer--drop-down-section">
-                        <ul class="mdl-mega-footer--link-list">
-                            <li>
-                                <a href="#top"
-                                   title="Back to the top of the page">
-                                    Back to the top of the page
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                {% if MEGA_FOOTER == True %}
-                    {% include 'partials/mega_footer.html' %}
-                {% endif %}
-                <div class="mdl-mega-footer--bottom-section">
-                    <div class="mdl-logo">
-                        <a href="{{ SITEURL }}" rel="bookmark"
-                           title="{{ SITENAME }}">
-                            {{ SITENAME }}
-                        </a>
-                    </div>
-                    {% if DISCLAIMER or COPYRIGHT %}
-                        <ul class="eevee-footer mdl-mega-footer--link-list">
-                            {% if DISCLAIMER %}
-                                <li>{{ DISCLAIMER }}</li>
-                            {% endif %}
-                            {% if COPYRIGHT %}
-                                <li>{{ COPYRIGHT }}</li>
-                            {% endif %}
-                        </ul>
-                    {% endif %}
-                </div>
-            </footer>
         </main>
+        <div class="eevee-container mdl-grid">
+            <div role="presentation"
+                 class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+                {% include 'partials/pagination.html' %}
+            </div>
+        </div>
+        <footer class="mdl-mega-footer" itemscope
+                itemtype="http://schema.org/SiteNavigationElement">
+            <div class="mdl-mega-footer--top-section">
+                <div class="mdl-mega-footer--drop-down-section">
+                    <ul class="mdl-mega-footer--link-list">
+                        <li>
+                            <a href="#top"
+                               title="Back to the top of the page">
+                                Back to the top of the page
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% if MEGA_FOOTER == True %}
+                {% include 'partials/mega_footer.html' %}
+            {% endif %}
+            <div class="mdl-mega-footer--bottom-section">
+                <div class="mdl-logo">
+                    <a href="{{ SITEURL }}" rel="bookmark"
+                       title="{{ SITENAME }}">
+                        {{ SITENAME }}
+                    </a>
+                </div>
+                {% if DISCLAIMER or COPYRIGHT %}
+                    <ul class="eevee-footer mdl-mega-footer--link-list">
+                        {% if DISCLAIMER %}
+                            <li>{{ DISCLAIMER }}</li>
+                        {% endif %}
+                        {% if COPYRIGHT %}
+                            <li>{{ COPYRIGHT }}</li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            </div>
+        </footer>
     </div>
 </body>
 <link rel="stylesheet"
