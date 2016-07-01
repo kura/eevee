@@ -1,0 +1,6 @@
+{% assets filters="jsmin", output="js/%(version)s.js", "js/disqus.js",
+    "js/material.js" %}
+    <script async type="text/javascript"
+            src="{{ SITEURL }}/{{ ASSET_URL }}">
+    </script>
+{% endassets %}

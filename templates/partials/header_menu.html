@@ -1,49 +1,45 @@
-<nav class="eevee-nav mdl-navigation" itemscope
-     itemtype="http://schema.org/SiteNavigationElement"
-     aria-label="Header navigation">
-    {% for title, url in MENUITEMS %}
+{% for title, url in MENUITEMS %}
+    <a class="mdl-color-text--accent mdl-navigation__link"
+       href="{{ url }}" itemprop="url" rel="bookmark">
+        {{ title }}
+    </a>
+{% endfor %}
+{% if DISPLAY_PAGES_ON_MENU != False %}
+    {% for page in PAGES %}
         <a class="mdl-color-text--accent mdl-navigation__link"
-           href="{{ url }}" itemprop="url" rel="bookmark">
-            {{ title }}
+           href="{{ SITEURL }}/{{ page.url }}" itemprop="url"
+           rel="bookmark">
+            {{ page.title }}
         </a>
     {% endfor %}
-    {% if DISPLAY_PAGES_ON_MENU != False %}
-        {% for page in PAGES %}
-            <a class="mdl-color-text--accent mdl-navigation__link"
-               href="{{ SITEURL }}/{{ page.url }}" itemprop="url"
-               rel="bookmark">
-                {{ page.title }}
-            </a>
-        {% endfor %}
-    {% endif %}
-    {% if ARCHIVES_SAVE_AS %}
-        <a class="mdl-color-text--accent mdl-navigation__link"
-           href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"
-           itemprop="url" rel="bookmark">
-            <i class="material-icons">folder</i> Archives
-        </a>
-    {% endif %}
-    {% if FEED_RSS or FEED_ATOM %}
-        <a class="mdl-color-text--accent mdl-navigation__link"
-           href="{{ SITEURL }}/{{ FEED_RSS if FEED_RSS else FEED_ATOM }}"
-           title="{{ 'RSS' if FEED_RSS else 'Atom' }} Feed" itemprop="url">
-            <i class="material-icons">rss_feed</i>
-            {{ 'RSS' if FEED_RSS else 'Atom' }}
-        </a>
-    {% endif %}
-    {% if 'tipue_search' in PLUGINS %}
-        <div class="eevee-search-menu mdl-textfield">
-            <label class="mdl-color-text--accent mdl-button mdl-button--icon"
-                   for="tipue_search_input">
-                <i class="material-icons">search</i>
-            </label>
-            <div>
-                <form action="{{ SITEURL }}/search.html">
-                <input class="eevee-search-box mdl-textfield__input"
-                       type="text" name="q" id="tipue_search_input"
-                       autocomplete="off">
-                </form>
-            </div>
+{% endif %}
+{% if ARCHIVES_SAVE_AS %}
+    <a class="mdl-color-text--accent mdl-navigation__link"
+       href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"
+       itemprop="url" rel="bookmark">
+        <i class="material-icons">folder</i> Archives
+    </a>
+{% endif %}
+{% if FEED_RSS or FEED_ATOM %}
+    <a class="mdl-color-text--accent mdl-navigation__link"
+       href="{{ SITEURL }}/{{ FEED_RSS if FEED_RSS else FEED_ATOM }}"
+       title="{{ 'RSS' if FEED_RSS else 'Atom' }} Feed" itemprop="url">
+        <i class="material-icons">rss_feed</i>
+        {{ 'RSS' if FEED_RSS else 'Atom' }}
+    </a>
+{% endif %}
+{% if 'tipue_search' in PLUGINS %}
+    <div class="eevee-search-menu mdl-textfield">
+        <label class="mdl-color-text--accent mdl-button mdl-button--icon"
+               for="tipue_search_input">
+            <i class="material-icons">search</i>
+        </label>
+        <div>
+            <form action="{{ SITEURL }}/search.html">
+            <input class="eevee-search-box mdl-textfield__input"
+                   type="text" name="q" id="tipue_search_input"
+                   autocomplete="off">
+            </form>
         </div>
-    {% endif %}
-</nav>
+    </div>
+{% endif %}

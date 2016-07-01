@@ -23,19 +23,34 @@ Features
 
 - Built around Google's Material Design specification,
 - configurable colour scheme,
+- responsive layout with mobile friendly header and navigation scheme,
 - DNS prefetching,
 - comments from Disqus or Muut,
 - share buttons for Twitter, Facebook and Google+,
 - Twitter and Open Graph meta tags,
-- CSS minifying via webassets and cssmin,
-- analytics from Google Analytics and Piwik,
+- CSS and JS minifying via webassets, cssmin and jsmin,
+- analytics from Google Analytics, Piwik and GoSquared,
 - easy menu and footer customisation,
 - custom 404 error page,
 - includes Material Icons, Font Awesome and Roboto font,
-- no additional javascript loading, except if you enable Google Analytics
-  or Piwik,
-- and allows upgrading of with `getmdl.io's Material
+- and seemless upgrading with `getmdl.io's Material
   Javascript <https://getmdl.io/started/index.html#download>`__.
+
+Plugins supported out-of-the-box
+================================
+
+Eevee ships with all the HTML and CSS required for the following plugins but
+does not need any of them to function. If a plugin is supported but not used,
+the HTML, CSS and JavaScript simply won't be included.
+
+- `assets <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__
+- `extract_toc <https://github.com/getpelican/pelican-plugins/tree/master/extract_toc>`__
+- `headerid <https://github.com/getpelican/pelican-plugins/tree/master/headerid>`__
+- `lightbox <https://github.com/getpelican/pelican-plugins/tree/master/lightbox>`__
+- `neighbors <https://github.com/getpelican/pelican-plugins/tree/master/neighbors>`__
+- `related_posts <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`__
+- `series <https://github.com/getpelican/pelican-plugins/tree/master/series>`__
+- `tipue_search <https://github.com/getpelican/pelican-plugins/tree/master/tipue_search>`__
 
 Typography
 ==========
@@ -97,14 +112,10 @@ Requirements
 ============
 
 - pelican
-- webassets
-- cssmin
-- pelican webassets from `pelican-plugins
-  <https://github.com/getpelican/pelican-plugins/tree/master/assets>`_
 
 .. code-block:: bash
 
-    pip install pelican webassets cssmin
+    pip install pelican
 
 Installation
 ============

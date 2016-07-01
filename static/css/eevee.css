@@ -4,6 +4,20 @@
     box-sizing: none;
 }
 
+div.eevee-mobile-button {
+    margin: 5px -5px !important;
+}
+
+.mdl-layout__drawer .mdl-navigation {
+    margin: -5px 0 0 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     text-decoration: none !important;
 }
@@ -85,6 +99,12 @@ th {
 .eevee-nav, .eevee-logo, .eevee-logo a {
     font-weight: 400;
     margin: 0;
+    opacity: 0.87;
+    text-decoration: none;
+}
+
+.eevee-mobile-logo {
+    font-weight: 400;
     opacity: 0.87;
     text-decoration: none;
 }

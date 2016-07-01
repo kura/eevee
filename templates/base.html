@@ -13,10 +13,14 @@
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 </head>
 <body>
-    <div class="eevee-layout mdl-layout mdl-color--grey-50">
-        <header class="eevee-header mdl-layout__header mdl-color--grey-50 mdl-color-text--grey-800"
+    <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50">
+        <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800"
                 itemscope itemtype="http://schema.org/WPHeader">
             <div class="mdl-layout__header-row" id="top">
+                <div aria-expanded="false" role="button" tabindex="0"
+                     class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only">
+                    <i class="material-icons">&#xE5D2;</i>
+                </div>
                 <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
                     <h3>
                         <a href="{{ SITEURL }}" rel="bookmark"
@@ -26,9 +30,31 @@
                     </h3>
                 </span>
                 <div class="mdl-layout-spacer" role="presentation"></div>
-                {% include 'partials/header_menu.html' %}
+                <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only"
+                     itemscope itemtype="http://schema.org/SiteNavigationElement"
+                     aria-label="Header navigation">
+                    {% include 'partials/header_menu.html' %}
+                </nav>
             </div>
         </header>
+        <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white" aria-hidden="true">
+            <span class="mdl-layout-title">
+                <h3 class="eevee-mobile-logo mdl-color-text--accent">
+                    {{ SITENAME }}
+                </h3>
+            </span>
+            <div class="mdl-navigation mdl-color--white">
+                <nav class="eevee-nav mdl-navigation" itemscope
+                     itemtype="http://schema.org/SiteNavigationElement"
+                     aria-label="Header navigation">
+                    <a class="mdl-color-text--accent mdl-navigation__link"
+                       href="{{ SITEURL }}" itemprop="url" rel="bookmark">
+                        <i class="material-icons">&#xE88A;</i> Home
+                    </a>
+                    {% include 'partials/header_menu.html' %}
+                </nav>
+            </div>
+        </div>
         <div class="eevee-ribbon mdl-color--primary-dark" role="presentation">
         </div>
         <main class="eevee-main mdl-layout__content">
@@ -92,6 +118,7 @@
       href="//code.getmdl.io/1.1.3/material.{{ THEME_PRIMARY }}-{{ THEME_ACCENT }}.min.css" />
 {% if 'assets' in PLUGINS %}
     {% include 'partials/_minify_css.html' with context %}
+    {% include 'partials/_minify_js.html' with context %}
 {% else %}
     <link rel="stylesheet" type="text/css"
           href="{{ SITEURL }}/theme/css/fonts.css" />
@@ -105,6 +132,9 @@
           href="{{ SITEURL }}/theme/css/eevee.css" />
     <link rel="stylesheet" type="text/css"
           href="{{ SITEURL }}/theme/css/custom.css" />
+    <script async type="text/javascript"
+            src="{{ SITEURL }}/theme/js/material.js">
+    </script>
 {% endif %}
 {% include 'partials/analytics.html' %}
 </html>
