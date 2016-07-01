@@ -46,7 +46,7 @@ the HTML, CSS and JavaScript simply won't be included.
 - `assets <https://github.com/getpelican/pelican-plugins/tree/master/assets>`__
 - `extract_toc <https://github.com/getpelican/pelican-plugins/tree/master/extract_toc>`__
 - `headerid <https://github.com/getpelican/pelican-plugins/tree/master/headerid>`__
-- `lightbox <https://github.com/getpelican/pelican-plugins/tree/master/lightbox>`__
+- `lightbox <https://github.com/getpelican/kura/lightbox>`__
 - `neighbors <https://github.com/getpelican/pelican-plugins/tree/master/neighbors>`__
 - `related_posts <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`__
 - `series <https://github.com/getpelican/pelican-plugins/tree/master/series>`__
