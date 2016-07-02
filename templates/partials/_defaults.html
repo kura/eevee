@@ -24,6 +24,17 @@
     {% endif %}
 {% endif %}
 
+{% if OWA_URL is not defined %}
+    {% set OWA_URL = False %}
+{% else %}
+    {% set OWA_URL = OWA_URL %}
+{% endif %}
+{% if OWA_SITE_ID is not defined %}
+    {% set OWA_SITE_ID = False %}
+{% else %}
+    {% set OWA_SITE_ID = OWA_SITE_ID %}
+{% endif %}
+
 {% if MUUT_SITENAME is not defined %}
     {% set MUUT_SITENAME = False %}
 {% else %}
@@ -31,13 +42,16 @@
 {% endif %}
 
 {% if article %}
-    {% set share_title = article.title %}
+    {% set share_title = article.title|striptags|escape %}
     {% set share_url = SITEURL ~ '/' ~ article.url %}
     {% set obj = article %}
 {% elif page %}
-    {% set share_title = page.title %}
+    {% set share_title = page.title|striptags|escape %}
     {% set share_url = SITEURL ~ '/' ~ page.url %}
     {% set obj = page %}
+{% else %}
+    {% set share_title = SITENAME|striptags|escape %}
+    {% set share_url = SITEURL %}
 {% endif %}
 
 {% if THEME_PRIMARY is not defined %}

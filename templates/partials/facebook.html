@@ -1,34 +1,28 @@
+{% from 'partials/_defaults.html' import OPEN_GRAPH_IMAGE with context %}
+{% from 'partials/_defaults.html' import USE_OPEN_GRAPH with context %}
 {% if USE_OPEN_GRAPH %}
+    {% from 'partials/_defaults.html' import share_title with context %}
+    {% from 'partials/_defaults.html' import share_url with context %}
+    {% from 'partials/_defaults.html' import obj with context %}
     <meta property="og:site_name" content="{{ SITENAME|striptags|escape }}">
     <meta property="og:type" content="article">
-    {% if article %}
+    {% if obj is defined %}
         <meta property="og:title"
-              content="{{ article.title|striptags|escape }}">
+              content="{{ obj.title|striptags|escape }}">
         <meta property="og:url"
-              content="{{ SITEURL }}/{{ article.url }}">
+              content="{{ SITEURL }}/{{ obj.url }}">
         <meta property="og:description"
-              content="{{ article.summary|striptags|escape }}">
-        {% if article.og_image %}
+              content="{{ obj.summary|striptags|escape }}">
+        {% if obj.og_image %}
             <meta property="og:image"
-                  content="{{ SITEURL }}/{{ article.og_image }}">
-        {% elif OPEN_GRAPH_IMAGE %}
-            <meta property="og:image"
-                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}">
-        {% endif %}
-    {% elif page %}
-        <meta property="og:title"
-              content="{{ page.title|striptags|escape }}">
-        <meta property="og:url"
-              content="{{ SITEURL }}/{{ page.url }}">
-        {% if page.og_image %}
-            <meta property="og:image"
-                  content="{{ SITEURL }}/{{ page.og_image }}">
+                  content="{{ SITEURL }}/{{ obj.og_image }}">
         {% elif OPEN_GRAPH_IMAGE %}
             <meta property="og:image"
                   content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}">
         {% endif %}
     {% else %}
-        <meta property="og:title" content="{{ SITENAME|striptags|escape }}">
+        <meta property="og:title"
+              content="{{ SITENAME|striptags|escape }}">
         <meta property="og:url" content="{{ SITEURL }}/{{ output_file }}">
         {% if OPEN_GRAPH_IMAGE %}
             <meta property="og:image"
