@@ -1,20 +1,35 @@
 {% if USE_OPEN_GRAPH is not defined %}
     {% set USE_OPEN_GRAPH = False %}
+{% else %}
+    {% set USE_OPEN_GRAPH = USE_OPEN_GRAPH %}
 {% endif %}
+
 {% if USE_TWITTER_CARDS is not defined %}
     {% set USE_TWITTER_CARDS = False %}
+{% else %}
+    {% set USE_TWITTER_CARDS = USE_TWITTER_CARDS %}
 {% endif %}
+
 {% if OPEN_GRAPH_IMAGE is not defined %}
     {% set OPEN_GRAPH_IMAGE = False %}
+{% else %}
+    {% set OPEN_GRAPH_IMAGE = OPEN_GRAPH_IMAGE %}
 {% endif %}
+
 {% if PIWIK_SITE_ID and PIWIK_URL %}
     {% if PIWIK_SSL_URL is not defined %}
         {% set PIWIK_SSL_URL = PIWIK_URL %}
+    {% else %}
+        {% set PIWIK_SSL_URL = PIWIK_SSL_URL %}
     {% endif %}
 {% endif %}
+
 {% if MUUT_SITENAME is not defined %}
     {% set MUUT_SITENAME = False %}
+{% else %}
+    {% set MUUT_SITENAME = MUUT_SITENAME %}
 {% endif %}
+
 {% if article %}
     {% set share_title = article.title %}
     {% set share_url = SITEURL ~ '/' ~ article.url %}
@@ -24,16 +39,33 @@
     {% set share_url = SITEURL ~ '/' ~ page.url %}
     {% set obj = page %}
 {% endif %}
-{% if THEME_PRIMARY is not defined or THEME_ACCENT is not defined %}
+
+{% if THEME_PRIMARY is not defined %}
     {% set THEME_PRIMARY = 'blue_grey' %}
-    {% set THEME_ACCENT = 'pink' %}
+{% else %}
+    {% set THEME_PRIMARY = THEME_PRIMARY %}
 {% endif %}
+
+{% if THEME_ACCENT is not defined %}
+    {% set THEME_ACCENT = 'pink' %}
+{% else %}
+    {% set THEME_ACCENT = THEME_ACCENT %}
+{% endif %}
+
 {% if MEGA_FOOTER is not defined %}
     {% set MEGA_FOOTER = True %}
+{% else %}
+    {% set MEGA_FOOTER = MEGA_FOOTER %}
 {% endif %}
+
 {% if DISCLAIMER is not defined %}
-    {% set DISCLAIMER = False %}
+    {% set DISCLAIMER = 'Powered by love &amp; rainbow sparkles.' %}
+{% else %}
+    {% set DISCLAIMER = DISCLAIMER %}
 {% endif %}
+
 {% if COPYRIGHT is not defined %}
-    {% set COPYRIGHT = False %}
+    {% set COPYRIGHT = '<a href="https://kura.io/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.io/" title="kura.io">kura.io</a>' %}
+{% else %}
+    {% set COPYRIGHT = COPYRIGHT %}
 {% endif %}

@@ -1,52 +1,52 @@
 {% if USE_TWITTER_CARDS %}
     {% if TWITTER_USERNAME %}
-        <meta property="twitter:site" content="@{{ TWITTER_USERNAME }}" />
+        <meta property="twitter:site" content="@{{ TWITTER_USERNAME }}">
     {% endif %}
     {% if article %}
         <meta property="twitter:title"
-              content="{{ article.title|striptags|escape }}" />
+              content="{{ article.title|striptags|escape }}">
         <meta property="twitter:url"
-              content="{{ SITEURL }}/{{ article.url }}" />
+              content="{{ SITEURL }}/{{ article.url }}">
         <meta property="twitter:description"
-              content="{{ article.summary|striptags|escape }}" />
+              content="{{ article.summary|striptags|escape }}">
         {% if article.og_image %}
             <meta property="twitter:image"
-                  content="{{ SITEURL }}/{{ article.og_image }}" />
+                  content="{{ SITEURL }}/{{ article.og_image }}">
             <meta property="twitter:card"
-                  content="summary_large_image" />
+                  content="summary_large_image">
         {% elif OPEN_GRAPH_IMAGE %}
             <meta property="twitter:image"
-                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}" />
-            <meta property="twitter:card" content="summary_large_image" />
+                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}">
+            <meta property="twitter:card" content="summary_large_image">
         {% else %}
-            <meta property="twitter:card" content="summary" />
+            <meta property="twitter:card" content="summary">
         {% endif %}
     {% elif page %}
         <meta property="twitter:title"
-              content="{{ page.title|striptags|escape }}" />
+              content="{{ page.title|striptags|escape }}">
         <meta property="twitter:url"
-              content="{{ SITEURL }}/{{ page.url}}" />
+              content="{{ SITEURL }}/{{ page.url}}">
         {% if page.og_image %}
             <meta property="twitter:image"
-                  content="{{ SITEURL }}/{{ page.og_image }}" />
-            <meta property="twitter:card" content="summary_large_image" />
+                  content="{{ SITEURL }}/{{ page.og_image }}">
+            <meta property="twitter:card" content="summary_large_image">
         {% elif OPEN_GRAPH_IMAGE %}
             <meta property="twitter:image"
-                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}" />
-            <meta property="twitter:card" content="summary_large_image" />
+                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}">
+            <meta property="twitter:card" content="summary_large_image">
         {% else %}
-            <meta property="twitter:card" content="summary" />
+            <meta property="twitter:card" content="summary">
         {% endif %}
     {% else %}
         <meta property="twitter:title"
-              content="{{ SITENAME|striptags|escape }}" />
+              content="{{ SITENAME|striptags|escape }}">
         <meta property="twitter:url"
-              content="{{ SITEURL }}/{{ output_file }}" />
+              content="{{ SITEURL }}/{{ output_file }}">
         {% if OPEN_GRAPH_IMAGE %}
             <meta property="twitter:image"
-                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}" />
+                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}">
         {% else %}
-            <meta property="twitter:card" content="summary" />
+            <meta property="twitter:card" content="summary">
         {% endif %}
     {% endif %}
 {% endif %}

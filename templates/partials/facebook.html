@@ -1,38 +1,38 @@
 {% if USE_OPEN_GRAPH %}
-    <meta property="og:site_name" content="{{ SITENAME|striptags|escape }}" />
-    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="{{ SITENAME|striptags|escape }}">
+    <meta property="og:type" content="article">
     {% if article %}
         <meta property="og:title"
-              content="{{ article.title|striptags|escape }}" />
+              content="{{ article.title|striptags|escape }}">
         <meta property="og:url"
-              content="{{ SITEURL }}/{{ article.url }}" />
+              content="{{ SITEURL }}/{{ article.url }}">
         <meta property="og:description"
-              content="{{ article.summary|striptags|escape }}" />
+              content="{{ article.summary|striptags|escape }}">
         {% if article.og_image %}
             <meta property="og:image"
-                  content="{{ SITEURL }}/{{ article.og_image }}" />
+                  content="{{ SITEURL }}/{{ article.og_image }}">
         {% elif OPEN_GRAPH_IMAGE %}
             <meta property="og:image"
-                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}" />
+                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}">
         {% endif %}
     {% elif page %}
         <meta property="og:title"
-              content="{{ page.title|striptags|escape }}" />
+              content="{{ page.title|striptags|escape }}">
         <meta property="og:url"
-              content="{{ SITEURL }}/{{ page.url }}" />
+              content="{{ SITEURL }}/{{ page.url }}">
         {% if page.og_image %}
             <meta property="og:image"
-                  content="{{ SITEURL }}/{{ page.og_image }}" />
+                  content="{{ SITEURL }}/{{ page.og_image }}">
         {% elif OPEN_GRAPH_IMAGE %}
             <meta property="og:image"
-                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}" />
+                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}">
         {% endif %}
     {% else %}
-        <meta property="og:title" content="{{ SITENAME|striptags|escape }}" />
-        <meta property="og:url" content="{{ SITEURL }}/{{ output_file }}" />
+        <meta property="og:title" content="{{ SITENAME|striptags|escape }}">
+        <meta property="og:url" content="{{ SITEURL }}/{{ output_file }}">
         {% if OPEN_GRAPH_IMAGE %}
             <meta property="og:image"
-                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}" />
+                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}">
         {% endif %}
     {% endif %}
 {% endif %}

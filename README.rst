@@ -24,14 +24,18 @@ Features
 - Built around Google's Material Design specification,
 - configurable colour scheme,
 - responsive layout with mobile friendly header and navigation scheme,
+- inclusion of a ``custom.css`` file allowing easy overwriting of the theme
+  without breaking the base CSS,
 - DNS prefetching,
-- comments from Disqus or Muut,
+- comments via Disqus or Muut,
 - share buttons for Twitter, Facebook and Google+,
 - Twitter and Open Graph meta tags,
 - CSS and JS minifying via webassets, cssmin and jsmin,
 - analytics from Google Analytics, Piwik and GoSquared,
 - easy menu and footer customisation,
 - custom 404 error page,
+- `Microdata <https://en.wikipedia.org/wiki/Microdata_(HTML)>`__,
+- `Aria <https://en.wikipedia.org/wiki/WAI-ARIA>`__ accessibility,
 - includes Material Icons, Font Awesome and Roboto font,
 - and seemless upgrading with `getmdl.io's Material
   Javascript <https://getmdl.io/started/index.html#download>`__.

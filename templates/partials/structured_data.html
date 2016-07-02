@@ -1,16 +1,16 @@
-<meta itemprop="accessibilityControl" content="fullKeyboardControl" />
-<meta itemprop="accessibilityControl" content="fullMouseControl" />
-<meta itemprop="accessibilityControl" content="bookmarks" />
-<meta itemprop="accessibilityControl" content="captions" />
-<meta itemprop="accessibilityControl" content="alternativeText" />
-<meta itemprop="accessibilityControl" content="index" />
-<meta itemprop="accessibilityControl" content="readingOrder" />
-<meta itemprop="accessibilityControl" content="structuralNavigation" />
-<meta itemprop="accessibilityControl" content="tableOfContents" />
-<meta itemprop="accessibilityHazard" content="noFlashingHazard" />
-<meta itemprop="accessibilityHazard" content="noMotionSimulationHazard" />
-<meta itemprop="accessibilityHazard" content="noSoundHazard" />
-<meta itemprop="accessibilityAPI" content="ARIA" />
+<meta itemprop="accessibilityControl" content="fullKeyboardControl">
+<meta itemprop="accessibilityControl" content="fullMouseControl">
+<meta itemprop="accessibilityControl" content="bookmarks">
+<meta itemprop="accessibilityControl" content="captions">
+<meta itemprop="accessibilityControl" content="alternativeText">
+<meta itemprop="accessibilityControl" content="index">
+<meta itemprop="accessibilityControl" content="readingOrder">
+<meta itemprop="accessibilityControl" content="structuralNavigation">
+<meta itemprop="accessibilityControl" content="tableOfContents">
+<meta itemprop="accessibilityHazard" content="noFlashingHazard">
+<meta itemprop="accessibilityHazard" content="noMotionSimulationHazard">
+<meta itemprop="accessibilityHazard" content="noSoundHazard">
+<meta itemprop="accessibilityAPI" content="ARIA">
 {% if obj is defined %}
     <div itemprop="author" itemscope
          itemtype="https://schema.org/Person" role="presentation">
@@ -23,9 +23,9 @@
     </div>
     {% if obj.tags %}
         <meta itemprop="keywords"
-              content="{% for tag in obj.tags %}{{ tag }}{% if not loop.last %},{% endif %}{% endfor %}" />
+              content="{% for tag in obj.tags %}{{ tag }}{% if not loop.last %},{% endif %}{% endfor %}">
     {% endif %}
     {% if obj.category %}
-        <meta itemprop="keywords" content="{{ obj.category }}" />
+        <meta itemprop="keywords" content="{{ obj.category }}">
     {% endif %}
 {% endif %}

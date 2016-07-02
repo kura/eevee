@@ -1,4 +1,7 @@
 {% if article or page %}
+    {% from 'partials/_defaults.html' import share_title with context %}
+    {% from 'partials/_defaults.html' import share_url with context %}
+    {% from 'partials/_defaults.html' import obj with context %}
     <div class="eevee-meta eevee-share">
         <div class="mdl-layout-spacer"></div>
         <div>
