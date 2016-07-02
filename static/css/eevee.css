@@ -354,11 +354,11 @@ ul.social-share {
 }
 
 .social-share__link--email {
-    background-color: rgb(104,159,56);
+    background-color: rgb(104, 159, 56);
 }
 
 .social-share__link--email:hover {
-    background-color: rgb(85,139,47);
+    background-color: rgb(85, 139, 47);
 }
 
 .hidden {
