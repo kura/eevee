@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title }}{%endblock%}
+{% from 'partials/_defaults.html' import COMMENTS_ON_PAGES with context %}
+{% from 'partials/_defaults.html' import AUTHOR_CARD_ON_PAGES with context %}
 {% block content %}
     <article itemscope itemtype="http://schema.org/WebPage">
         {% include 'partials/structured_data.html' %}
@@ -13,17 +15,16 @@
                     {{ page.title }}
                 </a>
             </h2>
-            {% if page.toc %}
-                <section class="eevee-toc">
-                    <h2>Contents</h2>
-                    <nav class="eevee-toc-ribbon">
-                        {{ page.toc }}
-                    </nav>
-                </section>
-            {% endif %}
+            {% include 'partials/toc.html' %}
             <section itemprop="mainContentOfPage" class="page-content">
                 {{ page.content }}
             </section>
         </div>
+        {% if AUTHOR_CARD_ON_PAGES %}
+            {% include 'partials/author_card.html' %}
+        {% endif %}
+        {% if COMMENTS_ON_PAGES %}
+            {% include 'partials/comment.html' %}
+        {% endif %}
     </article>
 {% endblock %}

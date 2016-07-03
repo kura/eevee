@@ -4,7 +4,7 @@
     <article itemscope itemtype="http://schema.org/BlogPosting">
         {% include 'partials/structured_data.html' %}
         {% include 'partials/share.html' %}
-        <div class="eevee-article eevee-article-padding">
+        <div class="eevee-article">
             <div class="eevee-meta mdl-color-text--grey-500">
                 <time datetime="{{ article.date.isoformat() }}"
                       itemprop="datePublished">
@@ -18,40 +18,14 @@
                     {{ article.title }}
                 </a>
             </h2>
-            {% if article.series %}
-                <section>
-                    <p>
-                        This is part {{ article.series.index }} of the
-                        "{{ article.series.name }}" series.
-                    </p>
-                    <ol class="series-parts">
-                        {% for part_article in article.series.all %}
-                            <li {% if part_article == article %}
-                                class="series-active"
-                            {% endif %}>
-                                <a href="{{ SITEURL }}/{{ part_article.url }}"
-                                   title="{{ part_article.title|striptags }}"
-                                   itemprop="url">
-                                    {{ part_article.title|striptags }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ol>
-                    </section>
-            {% endif %}
-            {% if article.toc %}
-                <section class="eevee-toc">
-                    <h2>Contents</h2>
-                    <nav class="eevee-toc-ribbon">
-                        {{ article.toc }}
-                    </nav>
-                </section>
-            {% endif %}
+            {% include 'partials/series.html' %}
+            {% include 'partials/toc.html' %}
             <section itemprop="articleBody" class="article-content">
                 {{ article.content }}
             </section>
         </div>
         {% include 'partials/related.html' %}
+        {% include 'partials/author_card.html' %}
         {% include 'partials/comment.html' %}
     </article>
 {% endblock %}

@@ -1,9 +1,9 @@
 {% from 'partials/_defaults.html' import OPEN_GRAPH_IMAGE with context %}
 {% from 'partials/_defaults.html' import USE_OPEN_GRAPH with context %}
+{% from 'partials/_defaults.html' import share_title with context %}
+{% from 'partials/_defaults.html' import share_url with context %}
+{% from 'partials/_defaults.html' import obj with context %}
 {% if USE_OPEN_GRAPH %}
-    {% from 'partials/_defaults.html' import share_title with context %}
-    {% from 'partials/_defaults.html' import share_url with context %}
-    {% from 'partials/_defaults.html' import obj with context %}
     <meta property="og:site_name" content="{{ SITENAME|striptags|escape }}">
     <meta property="og:type" content="article">
     {% if obj is defined %}

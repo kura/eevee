@@ -5,12 +5,9 @@
         {% if 'assets' in PLUGINS %}
             {% include 'partials/_minify_tipue.html' with context %}
         {% else %}
-            <script defer src="{{ SITEURL }}/theme/js/jquery.js">
-            </script>
-            <script defer src="{{ SITEURL }}/theme/js/tipuesearch.js">
-            </script>
-            <script defer src="{{ SITEURL }}/theme/js/tipuesearch_set.js">
-            </script>
+            <script src="{{ SITEURL }}/theme/js/jquery.js"></script>
+            <script src="{{ SITEURL }}/theme/js/tipuesearch.js"></script>
+            <script src="{{ SITEURL }}/theme/js/tipuesearch_set.js"></script>
         {% endif %}
         <script>
             $(document).ready(function(){$("#tipue_search_input").tipuesearch({mode:"json",show:10,newWindow:!1,contentLocation:"{{ SITEURL }}/tipuesearch_content.json"})});

@@ -5,7 +5,11 @@
         <h2>404</h2>
         <section class="post-content">
             <p>Page not found.</p>
-            <p><a href="{{ SITEURL }}">Go back to the {{ SITENAME }} homepage.</a></p>
+            <p>
+                <a href="{{ SITEURL }}" itemprop="url">
+                    Go back to the {{ SITENAME }} homepage.
+                </a>
+            </p>
         </section>
     </div>
 {% endblock %}

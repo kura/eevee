@@ -1,19 +1,19 @@
 {% if article.related_posts %}
-<div class="eevee-related">
-    <section>
-        <h2>Related</h2>
-        <ul>
-            {% for related_post in article.related_posts %}
-                <li>
-                    <a href="{{ SITEURL }}/{{ related_post.url }}"
-                       rel="bookmark"
-                       title="Permalink to '{{ related_post.title|striptags }}'"
-                       itemprop="url">
-                        {{ related_post.title }}
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-    </section>
-</div>
+    <div class="eevee-related">
+        <section>
+            <h2>Related articles</h2>
+            <ul>
+                {% for related_post in article.related_posts %}
+                    <li>
+                        <a href="{{ SITEURL }}/{{ related_post.url }}"
+                           rel="bookmark"
+                           title="Permalink to '{{ related_post.title|striptags }}'"
+                           itemprop="url">
+                            {{ related_post.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
 {% endif %}

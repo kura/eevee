@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.0.9
+-----
+
+- Huge overhaul of theme... Too much to list, check out the documentation.
+
 0.0.8
 -----
 

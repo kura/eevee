@@ -1,0 +1,21 @@
+{% if article.series is defined and article.series.all is defined %}
+    <section>
+        <p>
+            This article is part of the
+            <span class="bold">{{ article.series.name }}</span> series.
+        </p>
+        <ol class="series-parts">
+            {% for part_article in article.series.all %}
+                <li {% if part_article == article %}
+                    class="series-active"
+                {% endif %}>
+                    <a href="{{ SITEURL }}/{{ part_article.url }}"
+                       title="{{ part_article.title|striptags }}"
+                       itemprop="url">
+                        {{ part_article.title|striptags }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ol>
+        </section>
+{% endif %}

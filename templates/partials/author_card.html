@@ -1,0 +1,42 @@
+{% from 'partials/_defaults.html' import USE_AUTHOR_CARD with context %}
+{% from 'partials/_defaults.html' import AUTHOR_CARD_AVATAR with context %}
+{% from 'partials/_defaults.html' import AUTHOR_CARD_DESCRIPTION with context %}
+{% from 'partials/_defaults.html' import AUTHOR_CARD_SOCIAL with context %}
+{% from 'partials/_defaults.html' import share_title with context %}
+{% from 'partials/_defaults.html' import share_url with context %}
+{% from 'partials/_defaults.html' import obj with context %}
+{% if USE_AUTHOR_CARD and obj is defined %}
+    <div class="eevee-ac">
+        <header class="eevee-ac__header">
+            <div class="eevee-ac-author__text">
+                <h2>{{ obj.author|title }}</h2>
+                {% if AUTHOR_CARD_DESCRIPTION %}
+                    <p>{{ AUTHOR_CARD_DESCRIPTION }}</p>
+                {% endif %}
+                {% if AUTHOR_SAVE_AS and obj.author %}
+                    <p>
+                        <a href="{{ SITEURL }}/{{ obj.author.url }}"
+                           itemprop="url"
+                           title="Read more articles by {{ obj.author|title }}">
+                            Read more articles by {{ obj.author|title }}
+                        </a>
+                {% endif %}
+                <nav class="eevee-ac-author__social">
+                    {% for title, url in AUTHOR_CARD_SOCIAL %}
+                        <a class="mdl-color-text--accent mdl-navigation__link"
+                           href="{{ url }}" itemprop="url" rel="bookmark">
+                            {{ title }}
+                        </a>
+                    {% endfor %}
+                </nav>
+            </div>
+            {% if AUTHOR_CARD_AVATAR %}
+                {% set avatar = AUTHOR_CARD_AVATAR %}
+            {% else %}
+                {% set avatar = '/theme/images/default_avatar.png' %}
+            {% endif %}
+            <img src="{{ avatar }}" class="eevee-ac-author__avatar"
+                 alt="{{ obj.author|title }}">
+        </header>
+    </div>
+{% endif %}

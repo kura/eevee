@@ -1,0 +1,9 @@
+{% from 'partials/_defaults.html' import obj with context %}
+{% if obj is defined and obj.toc %}
+    <section class="eevee-toc">
+        <h2>Contents</h2>
+        <nav class="eevee-toc-ribbon">
+            {{ obj.toc }}
+        </nav>
+    </section>
+{% endif %}

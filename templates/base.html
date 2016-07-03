@@ -99,21 +99,23 @@
                 </div>
             </div>
         </main>
-        <div class="eevee-container mdl-grid">
-            <div role="presentation"
-                 class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+        {% if DEFAULT_PAGINATION %}
+            <div class="eevee-pagination__container eevee-container mdl-grid">
+                <div role="presentation"
+                     class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+                    {% include 'partials/pagination.html' %}
+                </div>
             </div>
-            <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-                {% include 'partials/pagination.html' %}
-            </div>
-        </div>
+        {% endif %}
         <footer class="mdl-mega-footer" itemscope
                 itemtype="http://schema.org/SiteNavigationElement">
             <div class="mdl-mega-footer--top-section">
                 <div class="mdl-mega-footer--drop-down-section">
                     <ul class="mdl-mega-footer--link-list">
                         <li>
-                            <a href="#top"
+                            <a href="#top" itemprop="url"
                                title="Back to the top of the page">
                                 Back to the top of the page
                             </a>
@@ -126,7 +128,7 @@
             {% endif %}
             <div class="mdl-mega-footer--bottom-section">
                 <div class="mdl-logo">
-                    <a href="{{ SITEURL }}" rel="bookmark"
+                    <a href="{{ SITEURL }}" rel="bookmark" itemprop="url"
                        title="{{ SITENAME }}">
                         {{ SITENAME }}
                     </a>

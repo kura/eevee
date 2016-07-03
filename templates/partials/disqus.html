@@ -1,6 +1,11 @@
+{% if article %}
+    {% set obj = article %}
+{% elif page %}
+    {% set obj = page %}
+{% endif %}
 <div id="disqus_thread"></div>
 <script>
-    var disqus_config=function(){this.page.url="{{ SITEURL }}/{{ article.url }}",this.page.identifier="/{{ article.url }}"};!function(){var e=document,t=e.createElement("script");t.src="//{{ DISQUS_SITENAME }}.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)}();
+    var disqus_config=function(){this.page.url="{{ SITEURL }}/{{ obj.url }}",this.page.identifier="/{{ obj.url }}"};!function(){var e=document,t=e.createElement("script");t.src="//{{ DISQUS_SITENAME }}.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)}();
 </script>
 <noscript>
     Please enable JavaScript to view the

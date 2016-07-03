@@ -92,6 +92,10 @@ th {
     text-align: right;
 }
 
+span.bold {
+    font-weight: bold;
+}
+
 .eevee-header .mdl-layout__header-row {
     padding-left: 40px;
 }
@@ -155,14 +159,6 @@ div.eevee-page-spacer {
     height: 56px;
 }
 
-.eevee-article-padding {
-    padding-bottom: 56px;
-}
-
-.eevee-layout.is-small-screen .eevee-content {
-    padding: 40px 28px;
-}
-
 .eevee-footer {
     padding-left: 40px;
 }
@@ -221,6 +217,11 @@ div.eevee-page-spacer {
 }
 
 div.eevee-related {
+    background-color: rgb(255, 255, 255);
+    padding: 10px 56px 20px 56px;
+}
+
+div.eevee-ac {
     background-color: rgb(245, 245, 245);
     padding: 10px 56px 20px 56px;
 }
@@ -228,6 +229,33 @@ div.eevee-related {
 div.eevee-comment {
     background-color: rgb(238, 238, 238);
     padding: 10px 56px 20px 56px;
+}
+
+header.eevee-ac__header {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+img.eevee-ac-author__avatar {
+    width: 220px !important;
+    height: 220px !important;
+}
+
+div.eevee-ac-author__text > h3 {
+    padding: 0;
+    margin: 0 0 10px -2px;
+}
+
+nav.eevee-ac-author__social > a {
+    font-size: 2rem;
 }
 
 div.eevee-comment div.muut {
@@ -256,6 +284,10 @@ div.eevee-comment div.muut {
     -ms-flex-pack: start;
     justify-content: flex-start;
     height: auto;
+}
+
+.eevee-pagination__container {
+    min-height: 80px;
 }
 
 .eevee-footer a, .mdl-logo a {
@@ -302,7 +334,6 @@ ul.social-share {
 }
 
 .social-share__link > a {
-    font-size: 22px;
     font-size: 2.2rem;
     color: rgb(255, 255, 255);
     display: block;
@@ -315,6 +346,7 @@ ul.social-share {
 }
 
 .social-share__link > a > i {
+    font-size: 2.2rem;
     margin-top: 10px;
     margin-right: 5px;
     text-align: right;
@@ -345,14 +377,6 @@ ul.social-share {
     background-color: rgb(255, 66, 33);
 }
 
-.social-share__link--comment {
-    background-color: rgb(0, 189, 207);
-}
-
-.social-share__link--comment:hover {
-    background-color: rgb(0, 212, 232);
-}
-
 .social-share__link--email {
     background-color: rgb(104, 159, 56);
 }
@@ -361,12 +385,29 @@ ul.social-share {
     background-color: rgb(85, 139, 47);
 }
 
+.social-share__link--comment {
+    background-color: rgb(0, 189, 207);
+}
+
+.social-share__link--comment:hover {
+    background-color: rgb(0, 212, 232);
+}
+
+.social-share__link a:hover {
+    color: rgb(255, 255, 255) !important;
+}
+
 .hidden {
     display: none;
 }
 
-a.headerlink {
-    color: rgb(224, 224, 224);
+h2 > a.headerlink:hover,
+h3 > a.headerlink:hover,
+h4 > a.headerlink:hover,
+h5 > a.headerlink:hover,
+h6 > a.headerlink:hover {
+    color: rgb(66, 66, 66) !important;
+    visibility: hidden;
     vertical-align: text-top;
     font-size: 40px;
     padding: 0 4px;
@@ -375,8 +416,28 @@ a.headerlink {
     transition: color 0.3s ease 0s !important;
 }
 
-a.headerlink:hover {
-    color: rgb(66, 66, 66) !important;
+h2 > a.headerlink,
+h3 > a.headerlink,
+h4 > a.headerlink,
+h5 > a.headerlink,
+h6 > a.headerlink {
+    color: rgb(224, 224, 224);
+    vertical-align: text-top;
+    font-size: 40px;
+    padding: 0 4px;
+    visibility: hidden;
+}
+
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink {
+    visibility: visible;
+    vertical-align: text-top;
+    font-size: 40px;
+    padding: 0 4px;
+    color: rgb(224, 224, 224);
 }
 
 .summary-content a.headerlink {

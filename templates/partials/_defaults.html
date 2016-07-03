@@ -41,6 +41,12 @@
     {% set MUUT_SITENAME = MUUT_SITENAME %}
 {% endif %}
 
+{% if COMMENTS_ON_PAGES is not defined %}
+    {% set COMMENTS_ON_PAGES = False %}
+{% else %}
+    {% set COMMENTS_ON_PAGES = COMMENTS_ON_PAGES %}
+{% endif %}
+
 {% if article %}
     {% set share_title = article.title|striptags|escape %}
     {% set share_url = SITEURL ~ '/' ~ article.url %}
@@ -82,4 +88,34 @@
     {% set COPYRIGHT = '<a href="https://kura.io/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.io/" title="kura.io">kura.io</a>' %}
 {% else %}
     {% set COPYRIGHT = COPYRIGHT %}
+{% endif %}
+
+{% if USE_AUTHOR_CARD is not defined %}
+    {% set USE_AUTHOR_CARD = False %}
+{% else %}
+    {% set USE_AUTHOR_CARD = USE_AUTHOR_CARD %}
+{% endif %}
+
+{% if AUTHOR_CARD_ON_PAGES is not defined %}
+    {% set AUTHOR_CARD_ON_PAGES = False %}
+{% else %}
+    {% set AUTHOR_CARD_ON_PAGES = AUTHOR_CARD_ON_PAGES %}
+{% endif %}
+
+{% if AUTHOR_CARD_AVATAR is not defined %}
+    {% set AUTHOR_CARD_AVATAR = False %}
+{% else %}
+    {% set AUTHOR_CARD_AVATAR = AUTHOR_CARD_AVATAR %}
+{% endif %}
+
+{% if AUTHOR_CARD_DESCRIPTION is not defined %}
+    {% set AUTHOR_CARD_DESCRIPTION = False %}
+{% else %}
+    {% set AUTHOR_CARD_DESCRIPTION = AUTHOR_CARD_DESCRIPTION %}
+{% endif %}
+
+{% if AUTHOR_CARD_SOCIAL is not defined %}
+    {% set AUTHOR_CARD_SOCIAL = SOCIAL %}
+{% else %}
+    {% set AUTHOR_CARD_SOCIAL = AUTHOR_CARD_SOCIAL %}
 {% endif %}

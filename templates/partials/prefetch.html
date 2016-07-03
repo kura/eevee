@@ -6,9 +6,11 @@
     <link rel="dns-prefetch" href="//{{ DISQUS_SITENAME }}.disqus.com">
     <link rel="dns-prefetch" href="//glitter-services.disqus.com">
 {% endif %}
+{% from 'partials/_defaults.html' import MUUT_SITENAME with context %}
 {% if MUUT_SITENAME %}
     <link rel="dns-prefetch" href="//cnd.muut.com">
 {% endif %}
+{% from 'partials/_defaults.html' import PIWIK_SSL_URL with context %}
 {% if PIWIK_URL %}
     <link rel="dns-prefetch" href="{{ PIWIK_URL }}">
 {% endif %}
@@ -21,4 +23,8 @@
 {% if GOOGLE_ANALYTICS %}
     <link rel="dns-prefetch" href="//google-analytics.com">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
+{% endif %}
+{% from 'partials/_defaults.html' import OWA_URL with context %}
+{% if OWA_URL %}
+    <link rel="dns-prefetch" href="{{ OWA_URL }}">
 {% endif %}

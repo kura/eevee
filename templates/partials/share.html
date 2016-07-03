@@ -1,7 +1,7 @@
-{% if article or page %}
-    {% from 'partials/_defaults.html' import share_title with context %}
-    {% from 'partials/_defaults.html' import share_url with context %}
-    {% from 'partials/_defaults.html' import obj with context %}
+{% from 'partials/_defaults.html' import share_title with context %}
+{% from 'partials/_defaults.html' import share_url with context %}
+{% from 'partials/_defaults.html' import obj with context %}
+{% if obj is defined %}
     <div class="eevee-meta eevee-share">
         <div class="mdl-layout-spacer"></div>
         <div>
@@ -30,17 +30,15 @@
                 <li class="social-share__link social-share__link--email">
                     <a href="mailto:?subject={{ share_title|striptags|urlencode }}&mp;body={{ share_url|urlencode }}"
                        title="Share '{{ share_title|striptags }}' via email">
-                        <i class="fa fa-share" aria-hidden="true"></i>
+                        <i class="material-icons" aria-hidden="true">&#xE0E1;</i>
                     </a>
                 </li>
-                {% if article %}
-                    {% if MUUT_SITENAME or DISQUS_SITENAME %}
-                        <li class="social-share__link social-share__link--comment">
-                            <a href="#article-comments" title="Discuss '{{ share_title|striptags }}'">
-                                <i class="fa fa-comments-o" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    {% endif %}
+                {% if MUUT_SITENAME or DISQUS_SITENAME %}
+                    <li class="social-share__link social-share__link--comment">
+                        <a href="#article-comments" title="Discuss '{{ share_title|striptags }}'">
+                         <i class="material-icons" aria-hidden="true">&#xE0B9;</i>
+                        </a>
+                    </li>
                 {% endif %}
             </ul>
         </div>
