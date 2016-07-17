@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.0.10
+------
+
+- Bug fixes in template styles.
+
 0.0.9
 -----
 

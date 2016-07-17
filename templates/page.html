@@ -8,13 +8,13 @@
         {% include 'partials/share.html' %}
         <div class="eevee-page-spacer" role="presentation"></div>
         <div class="eevee-page">
-            <h2 itemprop="name">
+            <h1 itemprop="name">
                 <a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark"
                    title="Permalink to '{{ page.title|striptags }}'"
                    itemprop="url">
                     {{ page.title }}
                 </a>
-            </h2>
+            </h1>
             {% include 'partials/toc.html' %}
             <section itemprop="mainContentOfPage" class="page-content">
                 {{ page.content }}

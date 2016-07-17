@@ -22,10 +22,6 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 -->
-{% from 'partials/_defaults.html' import OWA_URL with context %}
-{% from 'partials/_defaults.html' import OWA_SITE_ID with context %}
-{% from 'partials/_defaults.html' import PIWIK_SSL_URL with context %}
-{% from 'partials/_defaults.html' import MUUT_SITENAME with context %}
 {% from 'partials/_defaults.html' import THEME_PRIMARY with context %}
 {% from 'partials/_defaults.html' import THEME_ACCENT with context %}
 {% from 'partials/_defaults.html' import MEGA_FOOTER with context %}
@@ -36,6 +32,7 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="alternate" href="{{ SITEURL }}" hreflang="{{ DEFAULT_LANG }}" />
     {% include 'partials/prefetch.html' %}
     {% include 'partials/feeds.html' %}
     {% include 'partials/facebook.html' %}
@@ -53,12 +50,12 @@
                     <i class="material-icons">&#xE5D2;</i>
                 </div>
                 <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
-                    <h3>
+                    <h2>
                         <a href="{{ SITEURL }}" rel="bookmark"
                            title="{{ SITENAME }}">
                             {{ SITENAME }}
                         </a>
-                    </h3>
+                    </h2>
                 </span>
                 <div class="mdl-layout-spacer" role="presentation"></div>
                 <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only"
@@ -68,11 +65,12 @@
                 </nav>
             </div>
         </header>
-        <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white" aria-hidden="true">
+        <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white"
+             aria-hidden="true">
             <span class="mdl-layout-title">
-                <h3 class="eevee-mobile-logo mdl-color-text--accent">
+                <h2 class="eevee-mobile-logo mdl-color-text--accent">
                     {{ SITENAME }}
-                </h3>
+                </h2>
             </span>
             <div class="mdl-navigation mdl-color--white">
                 <nav class="eevee-nav mdl-navigation" itemscope

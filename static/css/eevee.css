@@ -254,7 +254,7 @@ div.eevee-ac-author__text > h3 {
     margin: 0 0 10px -2px;
 }
 
-nav.eevee-ac-author__social > a {
+nav.eevee-ac-author__social > a > i {
     font-size: 2rem;
 }
 
@@ -313,7 +313,7 @@ p.align-center {
 
 .eevee-share {
     float: right;
-    padding: 36px 56px 0 56px;
+    padding: 36px 56px 36px 56px;
 }
 
 ul.social-share {
@@ -499,6 +499,10 @@ li.series-active, li.series-active a {
     background: rgba(0, 0, 0, 0.8);
 }
 
+.lightbox-block {
+    padding: 30px 0;
+}
+
 .lightbox img {
     max-width: 98%;
     max-height: 90%;
@@ -525,4 +529,40 @@ li.series-active, li.series-active a {
     width: 100%;
     height: 0;
     margin: 0;
+}
+
+.eevee-card-container {
+    padding: 0 !important;
+    max-width: 100% !important;
+}
+
+.eevee-cell {
+    background-color: #FFCCBC !important;
+    padding: 10px !important;
+    min-height: 0 !important;
+}
+
+.eevee-cell--1-col {
+    margin: 8px !important;
+    width: calc(100% - 16px) !important;
+}
+
+.eevee-cell--2-col {
+    margin: 8px !important;
+    width: calc(50% - 16px) !important;
+}
+
+.eevee-cell--3-col {
+    margin: 8px !important;
+    width: calc(33.3333333333% - 16px) !important;
+}
+
+.eevee-cell--4-col {
+    margin: 8px !important;
+    width: calc(25% - 16px) !important;
+}
+
+.eevee-cell--5-col {
+    margin: 8px !important;
+    width: calc(20% - 16px) !important;
 }

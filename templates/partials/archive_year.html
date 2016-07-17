@@ -1,7 +1,7 @@
 {% for year, date_year in dates|groupby('date.year')|sort(reverse=True) %}
     <h2>
         {% if YEAR_ARCHIVE_SAVE_AS %}
-            <a href="{{ SITEURL }}/{{ YEAR_ARCHIVE_SAVE_AS.format(date=articles[0].date) }}"
+            <a href="{{ SITEURL }}/{{ YEAR_ARCHIVE_SAVE_AS.format(date=date_year[0].date)|replace('index.html', '') }}"
                rel="bookmark" title="Archives for {{ year }}"
                itemprop="url">
                 {{ year }}

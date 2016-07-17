@@ -11,13 +11,13 @@
                     {{ article.locale_date }}
                 </time>
             </div>
-            <h2 itemprop="name">
+            <h1 itemprop="name">
                 <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
                    title="Permalink to '{{ article.title|striptags }}'"
                    itemprop="url">
                     {{ article.title }}
                 </a>
-            </h2>
+            </h1>
             {% include 'partials/series.html' %}
             {% include 'partials/toc.html' %}
             <section itemprop="articleBody" class="article-content">

@@ -11,7 +11,7 @@
                     {{ article.locale_date }}
                 </time>
             </div>
-            <h2 itemprop="name">
+            <h2 itemprop="name" class="article-title">
                 <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
                    title="Permalink to '{{ article.title|striptags }}'"
                    itemprop="url">
@@ -21,12 +21,17 @@
             <section itemprop="articleBody" class="summary-content">
                 {{ article.summary }}
             </section>
-            <div class="eevee-divider mdl-color--accent" role="presentation"></div>
-            <div class="eevee-divider-to-top">
-                <a href="#top" title="Back to the top of the page">
-                    Back to the top of the page
-                </a>
-            </div>
+            {% if not loop.last %}
+                <div class="eevee-divider mdl-color--accent" role="presentation">
+                </div>
+                <div class="eevee-divider-to-top">
+                    <a href="#top" title="Back to the top of the page"
+                       itemprop="url">
+                        Back to the top of the page
+                    </a>
+                </div>
+            {% endif %}
         </article>
     {% endfor %}
+    <div class="eevee-page-spacer" role="presentation"></div>
 {% endblock content %}
