@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.0.11
+------
+
+- Stop using base64 fonts, dumb idea to begin with.
+- Tidy up font sizes in headers.
+
 0.0.10
 ------
 

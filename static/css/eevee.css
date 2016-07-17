@@ -1,3 +1,63 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'),
+       local('Roboto-Light'),
+       url('/theme/fonts/roboto-light.woff2') format('woff2'),
+       url('/theme/fonts/roboto-light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'),
+       local('Roboto-Regular'),
+       url('/theme/fonts/roboto-regular.woff2') format('woff2'),
+       url('/theme/fonts/roboto-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'),
+       local('Roboto-Medium'),
+       url('/theme/fonts/roboto-medium.woff2') format('woff2'),
+       url('/theme/fonts/roboto-medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'),
+       local('Roboto-Bold'),
+       url('/theme/fonts/roboto-bold.woff2') format('woff2'),
+       url('/theme/fonts/roboto-bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-style: normal;
+    src: local('Font Awesome'),
+         local('Font-Awesome'),
+         url('/theme/fonts/fontawesome.woff2') format('woff2'),
+         url('/theme/fonts/fontawesome.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url('/theme/fonts/materialicons-regular.woff2') format('woff2'),
+       url('/theme/fonts/materialicons-regular.woff') format('woff');
+}
+
 .mdl-layout__header {
     border: none;
     box-shadow: none;
@@ -20,6 +80,64 @@ img {
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     text-decoration: none !important;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 1.35;
+    margin: 24px 0;
+}
+
+h1, h2 {
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 34px;
+    line-height: 48px;
+}
+
+h2.article-title {
+    font-size: 36px;
+    line-height: 48px;
+}
+
+h2, h3 {
+    margin: 24px 0;
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+h3, h4 {
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 30px;
+    line-height: 32px;
+    margin: 24px 0 16px;
+}
+
+h5 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+h5, h6 {
+    margin: 24px 0 16px;
+}
+
+h6 {
+    font-weight: 400;
+    line-height: 26px;
+}
+
+* {
+    font-feature-settings: 'liga' !important;
 }
 
 pre, code, blockquote {
