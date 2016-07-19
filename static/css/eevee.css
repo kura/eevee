@@ -472,47 +472,113 @@ ul.social-share {
 }
 
 .social-share__link--twitter {
-    background-color: rgb(80, 171, 241);
+    background-color: rgb(3, 155, 229);
 }
 
 .social-share__link--twitter:hover {
-    background-color: rgb(17, 143, 240);
+    background-color: rgb(2, 119, 189);
+}
+
+nav.eevee-ac-author__social a[href^="http://twitter.com"],
+nav.eevee-ac-author__social a[href^="http://www.twitter.com"],
+nav.eevee-ac-author__social a[href^="https://twitter.com"],
+nav.eevee-ac-author__social a[href^="https://www.twitter.com"] {
+    color: rgb(3, 155, 229) !important;
+}
+
+nav.eevee-ac-author__social a[href^="http://twitter.com"]:hover,
+nav.eevee-ac-author__social a[href^="http://www.twitter.com"]:hover,
+nav.eevee-ac-author__social a[href^="https://twitter.com"]:hover,
+nav.eevee-ac-author__social a[href^="https://www.twitter.com"]:hover {
+    color: rgb(2, 119, 189) !important;
 }
 
 .social-share__link--facebook {
-    background-color: rgb(58, 89, 153);
+    background-color: rgb(21, 101, 192);
 }
 
 .social-share__link--facebook:hover {
-    background-color: rgb(32, 89, 206);
+    background-color: rgb(13, 71, 161);
+}
+
+nav.eevee-ac-author__social a[href^="http://facebook.com"],
+nav.eevee-ac-author__social a[href^="http://www.facebook.com"],
+nav.eevee-ac-author__social a[href^="https://facebook.com"],
+nav.eevee-ac-author__social a[href^="https://www.facebook.com"] {
+    color: rgb(21, 101, 192) !important;
+}
+
+nav.eevee-ac-author__social a[href^="http://facebook.com"]:hover,
+nav.eevee-ac-author__social a[href^="http://www.facebook.com"]:hover,
+nav.eevee-ac-author__social a[href^="https://facebook.com"]:hover,
+nav.eevee-ac-author__social a[href^="https://www.facebook.com"]:hover {
+    color: rgb(13, 71, 161) !important;
 }
 
 .social-share__link--google-plus {
-    background-color: rgb(223, 74, 48);
+    background-color: rgb(244, 67, 54);
 }
 
 .social-share__link--google-plus:hover {
-    background-color: rgb(255, 66, 33);
+    background-color: rgb(211, 47, 47);
+}
+
+nav.eevee-ac-author__social a[href^="http://plus.google.com"],
+nav.eevee-ac-author__social a[href^="https://plus.google.com"] {
+    color: rgb(244, 67, 54) !important;
+}
+
+nav.eevee-ac-author__social a[href^="http://plus.google.com"]:hover,
+nav.eevee-ac-author__social a[href^="https://plus.google.com"]:hover {
+    color: rgb(211, 47, 47) !important;
 }
 
 .social-share__link--email {
-    background-color: rgb(104, 159, 56);
+    background-color: rgb(139, 195, 74);
 }
 
 .social-share__link--email:hover {
-    background-color: rgb(85, 139, 47);
+    background-color: rgb(104, 159, 56);
 }
 
 .social-share__link--comment {
-    background-color: rgb(0, 189, 207);
+    background-color: rgb(0, 188, 212);
 }
 
 .social-share__link--comment:hover {
-    background-color: rgb(0, 212, 232);
+    background-color: rgb(0, 151, 167);
 }
 
 .social-share__link a:hover {
     color: rgb(255, 255, 255) !important;
+}
+
+nav.eevee-ac-author__social a[href^="http://github.com"],
+nav.eevee-ac-author__social a[href^="http://www.github.com"],
+nav.eevee-ac-author__social a[href^="https://github.com"],
+nav.eevee-ac-author__social a[href^="https://www.github.com"] {
+    color: rgb(33, 33, 33) !important;
+}
+
+nav.eevee-ac-author__social a[href^="http://github.com"]:hover,
+nav.eevee-ac-author__social a[href^="http://www.github.com"]:hover,
+nav.eevee-ac-author__social a[href^="https://github.com"]:hover,
+nav.eevee-ac-author__social a[href^="https://www.github.com"]:hover {
+    color: rgb(97, 97, 97) !important;
+}
+
+nav.eevee-ac-author__social a[href^="http://instagram.com"],
+nav.eevee-ac-author__social a[href^="http://www.instagram.com"],
+nav.eevee-ac-author__social a[href^="https://instagram.com"],
+nav.eevee-ac-author__social a[href^="https://www.instagram.com"] {
+    color: rgb(139, 195, 74) !important;
+}
+
+nav.eevee-ac-author__social a[href^="http://instagram.com"]:hover,
+nav.eevee-ac-author__social a[href^="http://www.instagram.com"]:hover,
+nav.eevee-ac-author__social a[href^="https://instagram.com"]:hover,
+nav.eevee-ac-author__social a[href^="https://www.instagram.com"]:hover {
+    color: rgb(104, 159, 56) !important;
 }
 
 .hidden {

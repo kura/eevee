@@ -28,17 +28,18 @@
                     </a>
                 </li>
                 <li class="social-share__link social-share__link--email">
-                    <a href="mailto:?subject={{ share_title|striptags|urlencode }}&mp;body={{ share_url|urlencode }}"
-                       title="Share '{{ share_title|striptags }}' via email">
+                    <a href="mailto:?subject={{ share_title|striptags|urlencode }}&amp;body={{ share_title|striptags|urlencode }}%20-%20{{ share_url|urlencode }}%0A%0A{{ obj.summary|striptags|urlencode }}' via email">
                         <i class="material-icons" aria-hidden="true">&#xE0E1;</i>
                     </a>
                 </li>
                 {% if MUUT_SITENAME or DISQUS_SITENAME %}
-                    <li class="social-share__link social-share__link--comment">
-                        <a href="#article-comments" title="Discuss '{{ share_title|striptags }}'">
-                         <i class="material-icons" aria-hidden="true">&#xE0B9;</i>
-                        </a>
-                    </li>
+                    {% if obj is defined and obj.comments|title != 'False' %}
+                        <li class="social-share__link social-share__link--comment">
+                            <a href="#article-comments" title="Discuss '{{ share_title|striptags }}'">
+                             <i class="material-icons" aria-hidden="true">&#xE0B9;</i>
+                            </a>
+                        </li>
+                    {% endif %}
                 {% endif %}
             </ul>
         </div>
