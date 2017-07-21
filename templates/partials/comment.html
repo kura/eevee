@@ -1,5 +1,6 @@
+{% from 'partials/_defaults.html' import obj with context %}
 {% if DISQUS_SITENAME or MUUT_SITENAME %}
-    {% if obj is defined and obj.comments|title != 'False' %}
+    {% if obj.comments is defined and obj.comments|title != 'False' %}
         <div class="eevee-comment" id="article-comments">
             <section itemscope itemtype='http://schema.org/UserComments'>
                 <h2>Join the discussion</h2>
