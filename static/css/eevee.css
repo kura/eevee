@@ -140,13 +140,36 @@ h6 {
     font-feature-settings: 'liga' !important;
 }
 
-pre, code, blockquote {
+code, pre {
+  font-family: @mono;
+}
+
+*:not(pre) > code {
+  white-space: nowrap;
+  color: #c25;
+  padding: 1px 3px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 3px;
+}
+
+pre, blockquote {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 1.6em 0 1.6em -2.2em;
-    padding: 0 0 0 1.6em;
     border-left: rgb(66, 66, 66) 0.4em solid;
-    font-size: 14px;
+}
+
+blockquote {
+  padding: 0.8em 1.6em;
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+pre {
+  padding: 0 0 0 1.6em;
+  font-size: .9em;
+  overflow-x: auto;
 }
 
 table {
