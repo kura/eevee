@@ -10,7 +10,7 @@
                 </li>
             {% endfor %}
             {% if DISPLAY_PAGES_ON_MENU != False %}
-                {% for page in PAGES %}
+                {% for page in pages %}
                     <li>
                         <a href="{{ SITEURL }}/{{ page.url }}" itemprop="url"
                            rel="bookmark">
