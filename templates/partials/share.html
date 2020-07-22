@@ -20,13 +20,6 @@
                         <i class="fa fa-facebook" aria-hidden="true"></i>
                     </a>
                 </li>
-                <li class="social-share__link social-share__link--google-plus">
-                    <a href="https://plus.google.com/share?url={{ share_url|urlencode }}"
-                       title="Share '{{ share_title|striptags }}' on Google+"
-                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                        <i class="fa fa-google" aria-hidden="true"></i>
-                    </a>
-                </li>
                 <li class="social-share__link social-share__link--email">
                     <a href="mailto:?subject={{ share_title|striptags|urlencode }}&amp;body={{ share_title|striptags|urlencode }}%20-%20{{ share_url|urlencode }}%0A%0A{{ obj.summary|striptags|urlencode }}' via email">
                         <i class="material-icons" aria-hidden="true">&#xE0E1;</i>

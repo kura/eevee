@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.0.13
+------
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.12...0.0.13>`__
+
+- Removed Google Plugs from share template.
+
 0.0.12
 ------
 
@@ -10,7 +18,26 @@ Changelog
 - Updated share colours to be from the Material Design palette.
 - Added some automatic colouring of links/icons for AUTHOR_CARD
 - Added ability to disable comments and author_card for a specific page or
-  article using ``:author_card: False`` and ``:comments: False`` respectively.
+  article using metadata.
+
+  With RST this translates to:
+
+  .. code-block:: rst
+
+      Example title
+      #############
+      :slug: example
+      :author_card: False
+      :comments: False
+
+  And Markdown:
+
+  .. code-block:: md
+
+      Title: Example title
+      Slug: example
+      Author_card: False
+      Comments: False
 
 0.0.11
 ------
