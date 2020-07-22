@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.0.14
+------
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.13...0.0.14>`__
+
+- Remove references to kura.io
+
 0.0.13
 ------
 

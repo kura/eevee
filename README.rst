@@ -5,7 +5,7 @@ Eevee - A Material Design theme for Pelican
     :alt: Eevee the Pokémon
     :align: center
 
-Please see the `official documentation <https://kura.io/eevee/>`__ for more
+Please see the `official documentation <https://kura.gg/eevee/>`__ for more
 information.
 
 Features
