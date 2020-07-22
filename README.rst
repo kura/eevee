@@ -21,7 +21,7 @@ Features
 - `DNS prefetch`_ (see `DNS prefetch`_),
 - comments via `Disqus <https://disqus.com/>`__ or `Muut
   <https://muut.com/>`__ (see `Disqus or Muut for comments`_),
-- share buttons for Twitter, Facebook, Google+, email and comments (see
+- share buttons for Twitter, Facebook, email and comments (see
   `Sharing options`_),
 - Twitter and Open Graph meta tags (see `Adding an image to Open Graph and
   Twitter meta tags`_),
@@ -73,3 +73,21 @@ supported but not used, the HTML, CSS and JavaScript simply won't be included.
 - `tipue_search
   <https://github.com/getpelican/pelican-plugins/tree/master/tipue_search>`__ (
   see `Plugin: Search functionality`_ section for more information.)
+
+Screenshots
+===========
+
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/archives.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/article-header.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/disqus.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/eevee-mega-footer.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/headerid.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/homepage-separator.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/homepage.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/mobile-homepage.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/mobile-menu.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/pygments.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/related-author-card.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/search.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/series.png
+.. image:: https://raw.githubusercontent.com/kura/eevee/master/screenshots/small-footer.png
