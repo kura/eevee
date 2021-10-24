@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.0.15
+------
+
+`Compare changes
+<https://github.com/kura/eevee/compare/0.0.14...0.0.15>`__
+
+- Move the license block to after the head block in ``base.html``.
+
 0.0.14
 ------
 
