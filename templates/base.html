@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+{% from 'partials/_defaults.html' import THEME_PRIMARY with context %}
+{% from 'partials/_defaults.html' import THEME_ACCENT with context %}
+{% from 'partials/_defaults.html' import MEGA_FOOTER with context %}
+{% from 'partials/_defaults.html' import DISCLAIMER with context %}
+{% from 'partials/_defaults.html' import COPYRIGHT with context %}
+<html lang="{{ DEFAULT_LANG }}">
+<head id="head">
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="alternate" href="{{ SITEURL }}" hreflang="{{ DEFAULT_LANG }}" />
+    {% include 'partials/prefetch.html' %}
+    {% include 'partials/feeds.html' %}
+    {% include 'partials/facebook.html' %}
+    {% include 'partials/twitter.html' %}
+    <link rel="shortcut icon" href="{{ SITEURL }}/favicon.ico">
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+</head>
 <!--
     (The MIT License)
 
@@ -22,24 +40,6 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 -->
-{% from 'partials/_defaults.html' import THEME_PRIMARY with context %}
-{% from 'partials/_defaults.html' import THEME_ACCENT with context %}
-{% from 'partials/_defaults.html' import MEGA_FOOTER with context %}
-{% from 'partials/_defaults.html' import DISCLAIMER with context %}
-{% from 'partials/_defaults.html' import COPYRIGHT with context %}
-<html lang="{{ DEFAULT_LANG }}">
-<head id="head">
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="alternate" href="{{ SITEURL }}" hreflang="{{ DEFAULT_LANG }}" />
-    {% include 'partials/prefetch.html' %}
-    {% include 'partials/feeds.html' %}
-    {% include 'partials/facebook.html' %}
-    {% include 'partials/twitter.html' %}
-    <link rel="shortcut icon" href="{{ SITEURL }}/favicon.ico">
-    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-</head>
 <body>
     <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50">
         <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800"
