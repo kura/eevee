@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 {% if MUUT_SITENAME or DISQUS_SITENAME %}
-                    {% if obj is defined and obj.comments|title != 'False' %}
+                    {% if obj.comments is defined and obj.comments|title != 'False' %}
                         <li class="social-share__link social-share__link--comment">
                             <a href="#article-comments" title="Discuss '{{ share_title|striptags }}'">
                              <i class="material-icons" aria-hidden="true">&#xE0B9;</i>
