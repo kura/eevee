@@ -5,7 +5,7 @@
     </a>
 {% endfor %}
 {% if DISPLAY_PAGES_ON_MENU != False %}
-    {% for page in PAGES %}
+    {% for page in pages %}
         <a class="mdl-color-text--accent mdl-navigation__link"
            href="{{ SITEURL }}/{{ page.url }}" itemprop="url"
            rel="bookmark">
